@@ -1,0 +1,85 @@
+##Embedded JSX expressions
+翻译与总结
+
+翻译
+
+这段内容介绍了 JSX 的关键特性之一：嵌入表达式（embedded expressions），并通过实例说明如何在 JSX 中将 JavaScript 的变量、函数输出结果等内容插入到 HTML 中。
+
+	1.	JSX 是什么？
+	•	JSX 是 JavaScript 的语法扩展，专用于 React。
+	•	它允许开发者将 HTML 直接写在组件代码中，提高开发灵活性。
+	2.	JSX 的基本用法
+	•	一个简单的 JSX 示例将 HTML 写入变量：
+
+const result = <p>Hello, World!</p>;
+
+	•	这个 result 变量会存储一个 React 元素，可以插入到网页中。
+
+	3.	嵌入表达式的作用
+	•	JSX 允许在 HTML 中插入 JavaScript 变量 或 函数的返回值，提高了动态生成内容的能力。
+	4.	嵌入变量和函数的实例
+	•	嵌入变量：
+假设有一个存储名字的变量 name，可以通过 {} 插入到 JSX 中：
+
+const name = "John";
+const element = <p>Hello, {name}!</p>;
+
+	•	输出：Hello, John!
+
+	•	嵌入函数：
+可以调用函数并将结果插入到 JSX 中。例如：
+
+function formatName(firstName, lastName) {
+    return `${firstName} ${lastName}`;
+}
+const element = <h1>{formatName("John", "Doe")}</h1>;
+
+	•	输出：John Doe
+
+	5.	在 HTML 属性中使用表达式
+	•	可以将 JavaScript 表达式嵌入 HTML 属性中。例如：
+
+const url = "https://example.com/profile.jpg";
+const profile = <img src={url} alt="Profile Picture" />;
+
+	•	注意：在 JSX 中不需要为属性值加双引号，JSX 会自动处理。
+
+	6.	特点总结
+	•	嵌入表达式让开发者可以动态生成 HTML 内容，比如插入变量、计算结果等。
+	•	表达式写在 {} 中，支持变量、函数调用、甚至条件表达式。
+
+总结重点
+
+	1.	JSX 是什么：
+	•	JSX 是 React 中的语法扩展，用来在 JavaScript 中直接书写 HTML。
+	•	它将 HTML 转换成 React 元素，方便动态内容的生成。
+	2.	嵌入表达式（Embedded Expressions）：
+	•	在 JSX 中，使用花括号 {} 可以插入 JavaScript 的变量、函数返回值等。
+	•	常见用法包括动态文本内容、动态属性值等。
+	3.	代码示例：
+	•	嵌入变量：
+
+const name = "Alice";
+const element = <p>Hello, {name}!</p>;
+
+
+	•	嵌入函数：
+
+function getGreeting(name) {
+    return `Hello, ${name}!`;
+}
+const element = <p>{getGreeting("Alice")}</p>;
+
+
+	•	动态属性：
+
+const imageUrl = "https://example.com/image.jpg";
+const img = <img src={imageUrl} alt="Example" />;
+
+
+	4.	优点：
+	•	嵌入表达式让 JSX 既能表示结构（HTML），又能结合逻辑（JavaScript），大大提高了灵活性。
+	•	动态生成内容更简洁、更高效。
+
+总结：JSX 嵌入表达式是 React 开发中非常重要的功能，让静态的 HTML 内容可以变得动态和灵活，是编写动态用户界面的核心工具之一。
+

@@ -1,0 +1,89 @@
+##Embedding in attributes
+翻译
+
+这段内容讲解了在 React 应用中，如何通过在 HTML <img> 标签的 src 属性中嵌入 JSX 表达式来动态渲染图片，并完成具体的操作步骤。
+
+1. 背景与需求
+
+作者需要在 React 应用中添加一个新功能：渲染图片。可以通过嵌入 JSX 表达式到 <img> 标签的 src 属性来实现。
+
+2. 具体操作步骤
+
+	1.	设置项目初始状态：
+	•	打开 App.js 文件，初始代码为一个返回 <h1> 标题 “Hello World” 的组件。
+	2.	准备图片资源：
+	•	将头像图片从 GitHub 下载，并命名为 avatar.png。
+	•	将图片放入项目的 src 文件夹。
+	3.	导入图片：
+	•	使用 import 将图片文件导入 App.js 文件：
+
+import avatar from './avatar.png';
+
+
+	4.	创建 Logo 函数：
+	•	在 App.js 中新增一个名为 Logo 的函数。
+	•	在函数中：
+	•	声明 userPic 常量，并赋值为一个包含 <img> 标签的 JSX 元素：
+
+const userPic = <img src={avatar} alt="Avatar" />;
+
+
+	•	返回 userPic，即图片 JSX 元素。
+
+	5.	在 App 组件中渲染图片：
+	•	在 App 的 return 语句中，调用并渲染 Logo 函数：
+
+<div>
+    <h1>Hello World</h1>
+    <Logo />
+</div>
+
+
+	6.	预览效果：
+	•	打开浏览器，可以看到页面显示标题 “Hello World” 和图片。
+	7.	组件优化建议：
+	•	如果应用需要扩展更多功能，建议将 Logo 组件移至单独的文件中，以便更好地管理和维护。
+
+3. 代码示例
+
+完整实现代码如下：
+
+import React from 'react';
+import avatar from './avatar.png'; // 导入图片
+
+// 定义 Logo 组件
+function Logo() {
+    const userPic = <img src={avatar} alt="Avatar" />; // 渲染图片
+    return userPic; // 返回 JSX 图片元素
+}
+
+// App 主组件
+export default function App() {
+    return (
+        <div>
+            <h1>Hello World</h1>
+            <Logo /> {/* 调用并渲染 Logo 组件 */}
+        </div>
+    );
+}
+
+总结重点
+
+	1.	JSX 表达式嵌入：
+	•	可以将图片路径等动态数据嵌入 JSX 表达式中，例如：
+
+<img src={avatar} alt="Avatar" />
+
+
+	•	src 属性接受的是 JSX 表达式，因此可以动态导入或引用图片。
+
+	2.	关键步骤：
+	•	导入图片： 使用 import 导入图片文件。
+	•	创建组件： 在组件中用 <img> 标签渲染图片。
+	•	渲染图片： 在主组件中调用图片组件。
+	3.	优化建议：
+	•	随着应用复杂化，可以将图片组件抽取到单独的文件中，以提升可维护性。
+	4.	结果：
+	•	页面将显示标题 “Hello World” 和渲染的图片。
+
+这种方法适用于在 React 应用中动态管理和显示图片资源。

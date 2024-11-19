@@ -1,0 +1,123 @@
+##Ternary operators and functions in JSX
+翻译与总结
+
+翻译
+
+这篇内容介绍了在 JSX 中使用 三元运算符 和 函数调用 的方法，以动态地返回内容或执行逻辑。以下是关键点的翻译和解释：
+
+1. 三元运算符替代 if…else
+
+if…else 条件语句：
+传统的条件判断通常是这样的：
+
+let name = 'Bob';
+if (name === 'Bob') {
+    console.log('Hello, Bob');
+} else {
+    console.log('Hello, Friend');
+}
+
+三元运算符语法：
+三元运算符可以简化 if…else 逻辑，语法如下：
+
+condition ? value_if_true : value_if_false;
+
+例如，将上面的 if…else 替换为三元运算符：
+
+let name = 'Bob';
+name === 'Bob' ? console.log('Hello, Bob') : console.log('Hello, Friend');
+
+2. 在 JSX 中使用三元运算符
+
+可以在 JSX 的 {} 内使用三元运算符。例如：
+
+function Example() {
+    return (
+        <div className="heading">
+            <h1>{Math.random() >= 0.5 ? "Over 0.5" : "Under 0.5"}</h1>
+        </div>
+    );
+}
+
+	•	解释：
+	•	在 <h1> 中，{} 表示这里是 JavaScript 代码。
+	•	Math.random() >= 0.5 是一个条件，若为真则显示 "Over 0.5"，否则显示 "Under 0.5"。
+	•	总结：
+	•	三元运算符非常适合在 JSX 中动态生成内容。
+
+3. 在 JSX 中调用函数
+
+JSX 中可以调用函数，利用其返回值动态显示内容。
+	•	直接调用表达式：
+
+function Example2() {
+    return (
+        <div className="heading">
+            <h1>Here's a random number from 0 to 10: 
+                { Math.floor(Math.random() * 10) + 1 }
+            </h1>
+        </div>
+    );
+}
+
+	•	Math.floor(Math.random() * 10) + 1 生成一个 0 到 10 的随机数。
+	•	函数调用是一个表达式，返回的值会显示在页面上。
+
+	•	提取到单独函数：
+将生成随机数的逻辑提取到一个函数中：
+
+function Example3() {
+    const getRandomNum = () => Math.floor(Math.random() * 10) + 1;
+
+    return (
+        <div className="heading">
+            <h1>Here's a random number from 0 to 10: { getRandomNum() }</h1>
+        </div>
+    );
+}
+
+	•	getRandomNum 是一个箭头函数，可以返回随机数。
+	•	函数调用 { getRandomNum() } 的结果被嵌入到 JSX 中。
+
+	•	函数的其他写法：
+同样的函数可以用不同的语法定义：
+	•	函数表达式：
+
+const getRandomNum = function() {
+    return Math.floor(Math.random() * 10) + 1;
+};
+
+
+	•	函数声明：
+
+function getRandomNum() {
+    return Math.floor(Math.random() * 10) + 1;
+}
+
+总结重点
+
+	1.	三元运算符：
+	•	语法：条件 ? 条件为真时返回的值 : 条件为假时返回的值。
+	•	可以替代简单的 if…else 语句。
+	•	在 JSX 中使用 {} 包裹三元运算符来动态显示内容。
+示例：
+
+<h1>{isLoggedIn ? "Welcome back!" : "Please sign in."}</h1>
+
+
+	2.	函数调用：
+	•	可以在 JSX 中调用 JavaScript 函数。
+	•	函数调用返回值会被嵌入到 HTML 中。
+	•	提取逻辑到单独函数有助于复用和代码清晰。
+示例：
+
+const greet = name => `Hello, ${name}`;
+<h1>{greet("Alice")}</h1>
+
+
+	3.	使用场景：
+	•	三元运算符适合简单条件判断。
+	•	函数调用适合复杂逻辑或动态内容生成。
+
+总结：三元运算符和函数调用让 JSX 更加灵活，可以轻松实现动态内容的显示，是 React 开发中的常用技巧。
+

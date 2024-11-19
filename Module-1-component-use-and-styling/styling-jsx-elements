@@ -1,0 +1,87 @@
+##Styling JSX elements
+翻译与总结
+
+翻译
+
+在 JSX 中可以通过多种方式为元素添加样式，既能实现功能性，也能提升视觉效果。以下是几种常见方法：
+
+1. 外部样式表
+
+通过在 index.html 文件中引入外部 CSS 文件的方式，使用传统的 CSS 样式。
+	•	HTML 中的引用：
+
+<link rel="stylesheet" href="styles.css">
+
+
+	•	在组件中通过 className 使用 CSS 类：
+
+function Promo(props) {
+    return (
+        <div className="promo-section">
+            <h1>{props.heading}</h1>
+            <h2>{props.promoSubHeading}</h2>
+        </div>
+    );
+}
+
+
+	•	CSS 文件内容：
+
+.promo-section {
+    font-weight: bold;
+    line-height: 20px;
+}
+
+
+
+这种方式结构清晰，适合大型项目，但样式可能会影响全局。
+
+2. 内联样式
+
+直接在 JSX 中添加样式对象。
+	•	基本用法：
+
+<h1 style={{ color: "tomato", fontSize: "40px", fontWeight: "bold" }}>
+    {props.heading}
+</h1>
+
+	•	样式写在花括号内，作为 JavaScript 对象。
+	•	CSS 属性需要 驼峰命名（例如 font-size 写成 fontSize）。
+	•	属性值通常是字符串，比如 "40px"。
+
+	•	用变量存储样式对象：
+
+function Promo(props) {
+    const styles = {
+        color: "tomato",
+        fontSize: "40px",
+        fontWeight: "bold"
+    };
+
+    return (
+        <div>
+            <h1 style={styles}>{props.heading}</h1>
+            <h2>{props.promoSubHeading}</h2>
+        </div>
+    );
+}
+
+
+
+通过变量存储样式对象可以让代码更整洁，方便修改，但可能会导致组件样式难以复用。
+
+总结重点
+
+	1.	外部样式表：
+	•	通过 className 使用全局或模块化的 CSS 样式。
+	•	样式集中管理，便于复用，适合大型项目。
+	2.	内联样式：
+	•	样式直接写在 JSX 内，作为 JavaScript 对象。
+	•	CSS 属性名需驼峰命名，例如 fontSize。
+	•	适合局部样式或动态样式需求。
+	3.	优缺点对比：
+	•	外部样式表： 易于维护，但可能会影响全局样式。
+	•	内联样式： 样式更局部化，避免全局污染，但难以复用，代码较难维护。
+
+推荐根据需求选择合适的样式管理方式：外部样式适合大规模样式统一，内联样式更适合动态或局部样式。
+

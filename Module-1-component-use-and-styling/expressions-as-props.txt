@@ -1,0 +1,159 @@
+##Expressions as props
+翻译与总结
+
+翻译
+
+这篇内容介绍了如何在 React 中将各种表达式作为 props 传递给组件，以及如何在组件中使用这些表达式。
+
+1. 表达式作为 props
+
+在 React 中，几乎可以将任何类型的表达式作为 props 的值传递给组件。例如，可以传递以下表达式作为 props：
+	•	三元运算符
+	•	函数调用
+	•	算术运算
+	•	字符串操作
+
+2. 示例代码：布尔值作为表达式
+
+const bool = false; 
+
+function Example(props) {
+    return (
+        <h2>The value of the toggleBoolean prop is: {props.toggleBoolean.toString()}</h2>
+    );
+};
+
+export default function App() { 
+    return ( 
+        <Example toggleBoolean={!bool} />
+    );
+}
+
+解析：
+	•	!bool 表达式：
+	•	传递的是布尔值 bool 的反转结果，!false 为 true。
+	•	toString() 方法：
+	•	由于布尔值不能直接显示为字符串，因此在组件中用 .toString() 将其转为字符串。
+
+3. 扩展示例：更多表达式作为 props
+
+const bool = false;
+const str1 = "just";
+
+function Example(props) {
+    return (
+        <div>
+            <h2>The value of the toggleBoolean prop is: {props.toggleBoolean.toString()}</h2>
+            <p>The value of the math prop is: <em>{props.math}</em></p>
+            <p>The value of the str prop is: {props.str}</p>
+        </div>
+    );
+}
+
+export default function App() { 
+    return ( 
+        <Example 
+            toggleBoolean={!bool} 
+            math={10 + 20} 
+            str={`${str1} another string`} 
+        />
+    );
+}
+
+解析：
+	1.	toggleBoolean：
+	•	传递布尔表达式 !bool，与上例相同。
+	2.	math：
+	•	传递算术表达式 10 + 20，在组件中显示其计算结果 30。
+	3.	str：
+	•	传递字符串连接表达式 ${str1} another string，结果是 "just another string"。
+
+4. 总结重点
+
+	1.	表达式可以作为 props 值：
+	•	React 允许将表达式（如布尔值、函数调用、算术运算等）直接传递给组件的 props。
+	•	表达式的结果会在组件中被解析并显示。
+	2.	使用场景：
+	•	布尔值： 可以直接传递逻辑操作的结果（如 !bool）。
+	•	算术运算： 可用数学表达式生成动态数值。
+	•	字符串拼接： 通过模板字符串或字符串操作动态生成内容。
+	3.	代码示例：
+
+<Example 
+    toggleBoolean={!bool} 
+    math={10 + 20} 
+    str={`${str1} another string`} 
+/>
+
+
+	4.	应用场景：
+	•	动态渲染组件内容。
+	•	通过 props 将计算结果或操作结果传递到子组件。
+
+总结： 在 React 中，props 非常灵活，可以用来传递各种类型的表达式。这种功能让组件更加动态和可复用，有助于提升代码的灵活性和表现力。
+
+大白话解释
+
+这个代码的作用是展示 props 的值，也就是传递给组件的参数值。我们一步步拆解来看：
+
+1. 变量 bool
+
+const bool = false;
+
+	•	定义了一个布尔变量 bool，值是 false。
+
+2. Example 组件
+
+function Example(props) {
+    return (
+        <h2>The value of the toggleBoolean prop is: {props.toggleBoolean.toString()}</h2>
+    );
+};
+
+	•	这是一个函数组件，名字叫 Example。
+	•	参数 props：
+	•	props 是 React 组件的一个固定参数，用来接收父组件传递的数据。
+	•	这里用到了 props.toggleBoolean，即父组件传递的 toggleBoolean 值。
+	•	toString() 方法：
+	•	因为布尔值（true 或 false）不能直接显示为文本，这里用 toString() 把它变成字符串，方便显示。
+	•	比如：true.toString() 变成 "true"。
+
+3. App 组件
+
+export default function App() { 
+    return ( 
+        <Example toggleBoolean={!bool} />
+    );
+}
+
+	•	App 是一个主组件，用来调用 Example 组件。
+	•	传递 toggleBoolean 属性：
+
+<Example toggleBoolean={!bool} />
+
+	•	toggleBoolean={!bool} 传递了一个布尔值。
+	•	!bool 是逻辑 非（NOT）运算，它会把 false 变成 true。
+	•	所以 toggleBoolean 的值是 true。
+
+4. 程序运行流程
+
+	1.	App 组件调用 Example：
+	•	它传递了一个 toggleBoolean 属性，值为 true。
+	2.	Example 接收到 props：
+	•	props.toggleBoolean 是 true。
+	3.	在页面上渲染：
+	•	props.toggleBoolean.toString() 把 true 转换成 "true"。
+	•	最终显示：
+
+The value of the toggleBoolean prop is: true
+
+大白话总结
+
+	1.	定义了一个 bool 变量，初始值是 false。
+	2.	在 App 组件里，调用了 Example 组件，并把 !bool（也就是 true）作为 toggleBoolean 的值传递给 Example。
+	3.	Example 组件接收到这个值，并显示成字符串 "true" 在页面上。
+
+最终效果：页面上会显示一行文字：
+
+The value of the toggleBoolean prop is: true
+

@@ -1,0 +1,76 @@
+##Props and Children
+翻译与总结
+
+翻译
+
+1. props.children 是什么？
+
+在 React 中，每个组件都有一个特殊的属性叫做 props.children，它可以用来处理被包裹在组件内的子内容。就像一个袋子（Bag）可以装苹果（Apples）或梨（Pears），props.children 就是用来装这些“内容”的。
+
+2. 使用 props.children 的例子
+
+比如，你有一个 Bag 组件，这个组件可以用来“包裹”其他组件或内容：
+
+function Bag(props) {
+  const bagStyle = {
+    padding: "20px",
+    border: "1px solid gray",
+    background: "#fff",
+    margin: "20px 0"
+  };
+  return <div style={bagStyle}>{props.children}</div>;
+}
+
+如果用这个 Bag 组件来包裹其他内容，比如苹果组件：
+
+<Bag>
+  <Apples color="yellow" number="5" />
+</Bag>
+
+或者梨组件：
+
+<Bag>
+  <Pears friend="Peter" />
+</Bag>
+
+那么，<Apples> 或 <Pears> 就会通过 props.children 传递到 Bag 组件中，渲染时显示在 Bag 的 <div> 里。
+
+3. 为什么需要 props.children？
+
+props.children 的意义在于让组件更通用。Bag 组件并不关心它包裹的是什么内容，可能是 Apples，也可能是 Pears，甚至是其他 JSX 元素或组件。这种灵活性让组件在不同场景下可以复用。
+
+总结重点
+
+	1.	什么是 props.children？
+	•	props.children 是 React 中的特殊属性，用于接收嵌套在组件中的内容。
+	•	无论是组件、HTML 元素，还是文本，只要写在组件的开闭标签之间，都会成为 props.children。
+	2.	如何使用？
+	•	在组件中通过 {props.children} 来渲染嵌套的内容。
+	•	示例：
+
+<Bag>
+  <Apples color="red" number="5" />
+</Bag>
+
+这里的 <Apples /> 就是 props.children。
+
+	3.	组件的灵活性：
+	•	使用 props.children 的组件可以像“容器”一样，不限定内部内容的类型，比如可以包裹组件、文本或者 HTML 元素。
+	4.	适度的模块化：
+	•	组件设计要讲求适度，不要把整个页面写成一个组件，也不要把每个小元素都拆成组件。
+	•	需要根据页面的功能划分，比如把菜单、购物车、页脚分成不同的组件，这样既有利于复用，又便于维护。
+	5.	小技巧：
+	•	props.children 还能嵌套多层，比如：
+
+<Trunk>
+  <Bag>
+    <Apples color="yellow" number="5" />
+    <Pears friend="Peter" />
+  </Bag>
+</Trunk>
+
+这样就形成了嵌套结构，方便组织复杂的页面。
+
+结论： props.children 是 React 中强大的工具，它让组件更灵活、更易于复用，是理解 React 组件的关键。
+
+
