@@ -1,0 +1,104 @@
+### 翻译与总结：动态事件处理与数字猜测游戏
+
+---
+
+### **任务目标**  
+构建一个简单的数字猜测游戏，学习如何通过用户交互触发事件，巩固React事件处理的基础知识。
+
+---
+
+### **任务步骤**  
+
+#### **第1步：添加按钮**
+将一个按钮元素添加到App组件的`<h1>`元素下。初始代码如下：
+
+```jsx
+function App() {
+  return (
+    <div>
+      <h1>Task: Add a button and handle a click event</h1>
+      <button></button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+#### **第2步：添加按钮文本**
+在按钮标签之间添加文本：**"Guess the number between 1 and 3"**。
+
+```jsx
+<button>Guess the number between 1 and 3</button>
+```
+
+---
+
+#### **第3步：绑定点击事件**
+在按钮的`onClick`属性中添加事件处理器`{handleClick}`：
+
+```jsx
+<button onClick={handleClick}>Guess the number between 1 and 3</button>
+```
+
+---
+
+#### **第4步：定义事件处理函数**
+在App组件的`return`语句上方定义`handleClick`函数，包含以下逻辑：
+1. **生成随机数**：用`Math.random()`生成1到3之间的随机整数。
+2. **用户输入**：通过`prompt`获取用户输入。
+3. **提示结果**：用`alert`显示电脑生成的数字和用户的猜测。
+
+```jsx
+function handleClick() {
+  let randomNum = Math.floor(Math.random() * 3) + 1; // 生成随机数
+  console.log(randomNum); // 打印随机数到控制台
+  let userInput = prompt('type a number'); // 获取用户输入
+  alert(`Computer number: ${randomNum}, Your guess: ${userInput}`); // 显示结果
+}
+```
+
+---
+
+#### **第5步：运行应用**
+保存代码并在浏览器中预览：
+1. 点击按钮时会触发`handleClick`函数。
+2. 弹出一个提示框让用户输入数字。
+3. 再弹出一个对话框显示电脑生成的数字和用户的猜测。
+4. 关闭对话框后可以重复点击按钮进行游戏。
+
+---
+
+### **完整代码：**
+
+```jsx
+function App() {
+  function handleClick() {
+    let randomNum = Math.floor(Math.random() * 3) + 1;
+    console.log(randomNum);
+    let userInput = prompt('type a number');
+    alert(`Computer number: ${randomNum}, Your guess: ${userInput}`);
+  }
+
+  return (
+    <div>
+      <h1>Task: Add a button and handle a click event</h1>
+      <button onClick={handleClick}>Guess the number between 1 and 3</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+### **总结：**  
+1. **事件处理：** 学会绑定按钮点击事件并调用函数处理逻辑。
+2. **随机数生成：** 使用`Math.random()`生成范围内的整数。
+3. **交互反馈：** 利用`prompt`和`alert`进行简单的用户输入和反馈。
+4. **动态行为：** 按钮事件可多次触发，实现重复交互的小游戏。
+
+该练习通过趣味数字猜测游戏，巩固了React事件处理的基本操作技巧。

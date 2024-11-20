@@ -1,0 +1,86 @@
+1.
+Question 1
+In React, can state be considered data?
+a. Yes
+b. No
+
+Correct->Yes
+Correct. In React, an app’s data can be expressed as state. 
+
+
+2.
+Question 2
+In React, can props be considered data?
+a. Yes
+b. No
+
+Correct->Yes
+Correct. In React, an app’s data can be expressed as props. 
+
+
+3.
+Question 3
+Choose the correct statement.
+a. The props object represents data that is external to a component, and state represents data that is internal to a component.
+b. The props object represents data that is internal to a component, and state represents data that is external to a component.
+
+
+Correct->a
+That’s correct! The props data is controlled outside of a component, and the state data is controlled by the component itself.
+
+
+4.
+Question 4
+What does the useState hook do?
+a. It allows a component to have its own state.
+b. It allows a component to receive state from its parent.
+
+Correct->a. It allows a component to have its own state.
+That’s right! The useState hook allows a component to have its own state.
+
+
+5.
+Question 5
+Based on the code below, is the userName variable external or internal data of the DisplayUser component?
+
+function DisplayUser(props) {
+  return (
+    <h1>{props.userName}</h1>
+  );
+}
+
+a. The userName value is data that is internal to the DisplayUser component
+b. The userName value is data that is external to the DisplayUser component
+
+Correct->b. The userName value is data that is external to the DisplayUser component
+That’s correct. The userName value comes from the parent component, and thus is not controlled by the DisplayUser component.
+
+### 总结  
+
+1. **React 中的状态是否可以被视为数据？**  
+   - **答案：是的。**  
+   - React 中，应用程序的数据可以用状态（state）来表示。  
+
+2. **React 中的 props 是否可以被视为数据？**  
+   - **答案：是的。**  
+   - React 中，应用程序的数据可以用 props（属性）来表示。  
+
+3. **选择正确的陈述：**  
+   - **正确答案：`props` 表示组件外部的数据，`state` 表示组件内部的数据。**  
+   - 解释：`props` 是由父组件控制的外部数据，而 `state` 是由组件本身控制的内部数据。  
+
+4. **useState hook 的作用是什么？**  
+   - **答案：它允许组件拥有自己的状态。**  
+
+5. **以下代码中 `userName` 变量是 `DisplayUser` 组件的外部还是内部数据？**  
+   ```javascript
+   function DisplayUser(props) {
+     return (
+       <h1>{props.userName}</h1>
+     );
+   }
+   ```  
+   - **答案：`userName` 是外部数据。**  
+   - 解释：`userName` 是由父组件通过 `props` 传递的，因此不由 `DisplayUser` 组件控制。
+
+---

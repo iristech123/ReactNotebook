@@ -1,0 +1,95 @@
+### 总结：
+
+在 React 中，数据流是单向的。这意味着数据总是从父组件流向子组件，而不能反向流动。单向数据流的重要性在于，它确保数据通过组件层次结构自上而下流动，同时保证数据的变化能够在系统中传递。
+
+React 中的数据可以分为两种类型：**props** 和 **state**。  
+- **Props**：是外部传递给组件的数据，子组件只能读取这些数据，不能改变它们。Props 是从父组件流向子组件的。
+- **State**：是组件内部控制并能够改变的数据。State 只能在组件内部修改，而不会被父组件直接影响。
+
+React 中的单向数据流使得每个组件的数据流动更加明确，避免了复杂的双向数据流。通过这种方式，组件可以通过 **props** 接收父组件传递的数据，但不能修改这些数据；而如果需要更新数据，组件可以通过 **state** 来控制和修改自身的数据。
+
+例如，一个父组件的 **state** 中存储当前日期时间，并通过 **props** 传递给子组件。子组件接收这个 **prop** 并渲染它。这种数据流动确保了子组件只能读取父组件传递的数据，而不能直接修改它。
+
+### 翻译：
+
+在这段视频中，你将学习到 ReactJS 中的数据流动。在这种情况下，数据流动是单向的。一个问题随之而来：为什么 React 中的单向数据流如此重要？让我告诉你。单向数据流确保数据从组件层级的上层流向下层，同时确保系统中发生的任何变化都会传播下去。稍后我们将更详细地讲解这一点。现在，你还将通过关注数据流来展示无状态和有状态的示例。
+
+想象数据就像是钱，而这笔钱由你的雇主控制。这笔钱可以视为 **props**，**props** 被传递给你，成为你的 **state**。这笔钱（**props**）总是从你的雇主流向你，而不会反向流动。
+
+在 React 中，数据通过 **props** 从父组件传递给子组件。子组件不能修改其接收到的 **props**，它只能读取它们并重新渲染。这意味着数据来自父组件，并且只在子组件中消费。
+
+然而，如果情况一直是这样，那么在 React 应用中你将只有若干独立的 DOM 部件，作为组件模板填充它们接收到的数据。虽然这样工作也不错，但几乎没有交互性。
+
+你已经了解了如何使用 **props** 将数据传递给子组件。然而，React 中还有一种处理数据的方式，那就是 **state**。React 中的所有数据可以分为 **props 数据** 和 **state 数据**：
+- **Props 数据**：是外部传递给组件的数据，组件只能读取这些数据，不能修改它们。
+- **State 数据**：是组件内部控制并可以修改的数据。
+
+可以这样理解：**props 数据** 属于父组件，父组件负责渲染组件；**state 数据** 属于组件本身。
+
+为了解释这一点，我们可以打开 VS Code 并演示一个例子。我使用 Create React App 创建了一个新的应用，创建了 `app.js` 和 `child.js` 两个文件。`app.js` 文件定义了应用组件，并使用类定义的方式初始化了组件的 `state`，其中包含当前日期。在渲染函数中，它将一个名为 `child` 的组件渲染出来。`child.js` 文件中的子组件通过 **props** 接收父组件传递的日期字符串，并渲染它。
+
+当我运行这个应用时，父组件的 **state** 流向子组件的 **props**，并且 `<h1>` 标签会显示当前的日期和时间。
+
+你现在已经学会了 ReactJS 中的子组件和数据流动的工作原理。你应该能够通过关注数据流来展示无状态和有状态的组件示例。
+
+Question
+
+Which of the following statements about data flow in React are correct? Select all that apply.      
+
+
+The props data is data outside the component and can mutate.    
+
+
+The props data is data outside the component and cannot mutate.     
+
+Correct
+That’s right! State data is a component’s internal data, which it can control and mutate. Props data is outside of the component and is immutable, meaning it cannot change.      
+
+
+Data can flow from parent to child and in the other direction with state data.     
+
+
+State data is data inside the component, and the component can control and mutate the data.     
+
+Correct
+That’s right! State data is a component’s internal data, which it can control and mutate. Props data is outside of the component and is immutable, meaning it cannot change.      
+
+
+“Mutate” 在编程中通常指“修改”或“变更”的意思。在 React 中，`mutate` 一词通常用来描述修改数据的操作。具体来说，它指的是直接改变数据的原始值。
+
+在 React 中，**props** 是 **不可变**（immutable）的，也就是说，子组件不能直接修改从父组件传递过来的数据（props）。它只能读取这些数据并根据它们重新渲染 UI。
+
+与此相对，**state** 是 **可变**（mutable）的，意味着组件可以通过 **setState()** 或类似的方法修改它自己的状态。这允许组件根据用户交互、网络请求等事件动态改变其显示的内容。
+
+例如：
+
+- **Mutating props（改变 props）**：不允许，因为 props 由父组件控制，子组件不能直接修改。
+- **Mutating state（改变 state）**：允许，组件内部可以根据需要修改自己的状态。
+
+### 示例：
+
+```jsx
+// 组件 A：父组件
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <Child count={count} setCount={setCount} />
+  );
+}
+
+// 组件 B：子组件
+function Child(props) {
+  // 在子组件内通过 props 读取数据，但不能直接修改它
+  return (
+    <div>
+      <p>{props.count}</p>
+      <button onClick={() => props.setCount(props.count + 1)}>增加</button>
+    </div>
+  );
+}
+```
+
+在上面的例子中，`count` 是通过 **props** 从父组件传递给子组件的，子组件不能直接修改 `count`，而是通过调用父组件提供的 `setCount` 方法来间接修改它。
+
+总结：在 React 中，**mutate** 通常指修改数据，但对于 **props**，数据是不可变的，而对于 **state**，数据是可变的。

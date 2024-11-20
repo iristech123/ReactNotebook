@@ -1,0 +1,233 @@
+1.
+Question 1
+What code should be added to the element button to make this code snippet valid?
+
+function App() {
+  function handleClick() {
+    console.log("clicked")
+  }
+
+  return (
+    <div className="App">
+      <button >Click me</button>
+    </div>
+}
+
+a. onClick={handleClick}
+b. click=handleClick
+c. onClick={handleClick()}
+
+Correct: a. onClick={handleClick} -> this is correct syntax
+
+
+2.
+Question 2
+Imagine that you have a variable named userLoggedIn and it’s set to the boolean of true. 
+How would you complete the below clickHandler function declaration to toggle the value of the userLoggedIn boolean?
+
+function clickHandler() {
+}
+
+a. userLoggedIn = false
+b. userLoggedIn = true
+c. userLoggedIn = !userLoggedIn
+
+
+Correct->c. userLoggedIn = !userLoggedIn
+That’s correct! This will toggle the boolean value from true to false, and from false to true.
+
+
+3.
+Question 3
+Is a click handler on its own enough to change the values of variables in your React apps?
+
+No
+Yes
+
+Correct:No
+That’s correct! You need to also use something known as “hooks”.
+
+
+4.
+Question 4
+What are the ways to write an event-handling function in React. Select all that apply.
+
+
+a. With an inline anonymous ES5 function
+Correct
+That’s right! An inline anonymous ES5 function is a valid way to handle an event in React.
+
+
+b. With an inline, anonymous ES6 function (an arrow function)
+Correct
+That’s right! An inline anonymous ES6 function (an arrow function) is a valid way to handle an event in React.
+
+
+c. Using a separate function declaration
+Correct
+That’s right! A separate function declaration is a valid way to handle an event in React.
+
+
+d. Using a separate function expression
+Correct
+That’s right! A separate function expression is a valid way to handle an event in React. 
+
+
+
+5.
+Question 5
+Choose the appropriate code on line 3 of the following component – to handle a click event.
+
+function App() {
+  function () {
+    console.log("clicked")
+  }
+
+  return (
+    <div className="App">
+      <button onClick={handleClick}>Click me</button>
+    </div>
+}
+
+
+a. function handleClick {
+b. function HandleClick() {
+c. function handleClick() {
+
+
+Correct -> c. function handleClick() {
+That’s correct. This return statement will show the Example component on the screen.
+
+
+---
+### 总结
+
+#### **问题 1**  
+**要使下面的代码片段有效，应该在 `button` 元素中添加什么代码？**
+
+```jsx
+function App() {
+  function handleClick() {
+    console.log("clicked");
+  }
+
+  return (
+    <div className="App">
+      <button>Click me</button>
+    </div>
+  );
+}
+```
+
+**答案：onClick={handleClick}**
+
+- **解释**：  
+  在 React 中，要处理按钮的点击事件，必须在按钮元素中使用 `onClick` 属性并将其绑定到处理函数 `handleClick`。正确的代码如下：
+  ```jsx
+  <button onClick={handleClick}>Click me</button>
+  ```
+
+---
+
+#### **问题 2**  
+**假设你有一个名为 `userLoggedIn` 的变量，并且它被设置为布尔值 `true`。如何完成下面的 `clickHandler` 函数声明，以切换 `userLoggedIn` 布尔值的值？**
+
+```jsx
+function clickHandler() {
+}
+```
+
+**答案：userLoggedIn = !userLoggedIn**
+
+- **解释**：  
+  使用 `!` 运算符可以切换布尔值的状态。每次点击时，它会将 `userLoggedIn` 从 `true` 切换到 `false`，再从 `false` 切换回 `true`。
+  ```jsx
+  function clickHandler() {
+    userLoggedIn = !userLoggedIn;
+  }
+  ```
+
+---
+
+#### **问题 3**  
+**仅有点击处理器能改变 React 应用中的变量值吗？**
+
+**答案：No（不）**
+
+- **解释**：  
+  点击事件处理函数只能响应用户操作，但要实际改变变量的值，你需要结合 React 中的 **状态（state）** 和 **hooks**（如 `useState`）。否则，React 组件不会重新渲染。
+
+---
+
+#### **问题 4**  
+**在 React 中，有哪些方式可以编写事件处理函数？请选择所有适用的方式。**
+
+**答案：**
+- **使用内联匿名的 ES5 函数**
+- **使用内联匿名的 ES6 箭头函数**
+- **使用单独的函数声明**
+- **使用单独的函数表达式**
+
+- **解释**：  
+  这些都是有效的 React 事件处理函数编写方式：
+  - **内联匿名 ES5 函数**：
+    ```jsx
+    <button onClick={function() { console.log("clicked"); }}>Click me</button>
+    ```
+  - **内联匿名 ES6 箭头函数**：
+    ```jsx
+    <button onClick={() => console.log("clicked")}>Click me</button>
+    ```
+  - **单独的函数声明**：
+    ```jsx
+    function handleClick() {
+      console.log("clicked");
+    }
+    <button onClick={handleClick}>Click me</button>
+    ```
+  - **单独的函数表达式**：
+    ```jsx
+    const handleClick = function() {
+      console.log("clicked");
+    }
+    <button onClick={handleClick}>Click me</button>
+    ```
+
+---
+
+#### **问题 5**  
+**选择以下组件代码的适当代码行 3 来处理点击事件。**
+
+```jsx
+function App() {
+  function () {
+    console.log("clicked");
+  }
+
+  return (
+    <div className="App">
+      <button onClick={handleClick}>Click me</button>
+    </div>
+  );
+}
+```
+
+**答案：function handleClick()**
+
+- **解释**：  
+  `handleClick` 是事件处理函数的正确名称，它用于在 `onClick` 事件中处理点击事件。因此，正确的代码是：
+  ```jsx
+  function handleClick() {
+    console.log("clicked");
+  }
+  ```
+
+---
+
+### **总结**
+1. 在 React 中，为了处理按钮点击事件，应该将 `onClick` 属性与事件处理函数绑定。
+2. 切换布尔值的方法是通过 `!` 运算符来反转其值。
+3. 仅通过点击处理器无法改变变量值，需使用 React 的 **hooks** 来更新组件状态。
+4. 在 React 中可以通过内联匿名函数、箭头函数、函数声明或函数表达式来处理事件。
+5. 正确的事件处理函数声明应使用 `function handleClick()`。
+

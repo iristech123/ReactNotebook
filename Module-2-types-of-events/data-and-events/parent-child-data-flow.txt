@@ -1,0 +1,114 @@
+### **总结：**
+
+在一个在线零售商工作时，经常需要更新折扣信息来推动库存流动。如果在网站多个地方展示这些折扣信息，逐个更新商品会变得繁琐且耗时。一个更高效的方法是，只在一个地方更新信息，其他地方会自动同步更新。这一概念体现了父子组件的关系，并且在 React 中有着广泛的应用。
+
+在 React 中，父组件将数据通过 `props` 传递给子组件。这种数据流是单向的（从父到子）。通过这种方式，可以将数据存储在父组件中，并动态地将其传递给子组件，从而避免在多个组件中重复更新相同的数据。
+
+例如，在一个“促销”组件中，父组件 `Promo` 通过 `PromoHeading` 渲染文本内容。若需要修改折扣信息，将其放在父组件中，并通过 `props` 传递给子组件。这样，若折扣信息发生变化，只需修改父组件中的数据，子组件会自动更新。
+
+如果你有多个需要显示相同折扣信息的组件（如侧边栏和页脚），通过将数据集中存储在父组件中，避免了在每个子组件中手动修改数据。只要更新父组件中的数据，所有子组件都会自动接收到最新的值。
+
+通过这种方法，你能确保数据的一致性，减少冗余代码，避免手动更新每个组件中的相同信息。
+
+---
+
+### **翻译：**
+
+假设你在一个在线零售商工作，定期调整折扣价格以保持库存流动。销售活动会在网站的多个地方宣布。但是，如何保持这些信息的更新？例如，逐个更新商品会非常繁琐且耗时。幸运的是，我们可以通过在一个地方更改信息，让其他地方自动更新。这种想法体现了父子组件关系，视频将介绍这种概念在 React 中的应用。通过观看这个视频，你将能够描述父子组件的单向数据流，并理解 React 的层次结构。
+
+首先，我们用两个组件举例，这两个组件将一起在应用中使用。第一个是 `Promo` 组件，它将返回你稍后创建的 `PromoHeading` 组件的内容。为了构建 `Promo` 组件，你可以声明一个 `Promo` 函数，并在大括号内写一个返回语句。这个返回语句包含一个 `div`，其中调用了 `PromoHeading` 组件，接着是 `export default Promo` 语句，让该组件可用。接下来，写 `PromoHeading` 组件，你可以声明 `PromoHeading` 函数并在大括号内写返回语句，返回一个包含文本 `80 percent off sale` 的 `h1` 标签。同样，别忘了导出组件使其可用。成功了！你已经创建了 `Promo` 组件，它调用了 `PromoHeading` 组件的函数来返回文本 `80 percent off sale`。在这个例子中，`Promo` 组件是父组件，`PromoHeading` 组件是子组件。
+
+假设折扣增加到 99%，你需要更新代码来反映这个变化。一种方法是在 `PromoDetails` 组件中更新 `h1` 标签的文本。这是一个简单的解决方法，因为只需要更改一次。然而，假设你的经理要求你在侧边栏和页脚组件中调用 `PromoHeading` 组件，并显示两条消息：“99% 全部商品折扣”和“全部清仓”。这些新需求意味着更新子组件的方式不再适用。为什么？因为现在你需要在多个组件中更新相同的数据。这违背了编程中的 DRY（不要重复自己）原则，旨在减少冗余的代码。再者，输入相同文本时，可能会犯错。而且，如果老板决定再次更改折扣，所有相关组件都需要再次修改。
+
+为了解决这个问题，你可以改变方法，建立一个“真理源”，将文本存储在父组件中。通过 `props` 将数据传递给子组件。
+
+首先，创建一个名为 `data` 的 JavaScript 对象，包含两个属性：`heading` 和 `callToAction`。然后，更新 `Promo` 组件，将 `data` 对象中的 `heading` 和 `callToAction` 值传递给 `PromoHeading` 组件。这就是父组件将数据传递给子组件的过程。
+
+在 `PromoHeading` 组件中，更新代码以接收来自父组件的数据。删除返回语句中的现有 `h1`，添加新的 `h1` 显示 `props.heading`，并添加 `h2` 显示 `props.callToAction`。现在，`PromoHeading` 组件接受一个 `props` 对象，其中包含父组件传递的 `heading` 和 `callToAction` 两个属性。通过在父组件中渲染特定的 JSX 元素，可以动态地传递值给子组件。
+
+通过这种方法，你不仅能够避免在多个组件中手动更新相同的数据，还能确保所有子组件都自动接收到更新的信息。
+
+
+Question
+What are the advantages of utilizing a centralized point of data - a "single source of truth" - in your React apps?
+Choose all that apply.      
+
+
+a. It reduces the possibility of typing errors in your code     
+->Correct
+That's right! Using a single source of truth allows you to edit multiple items at the same time if they reference the same data, reduces odds of typing errors, 
+and is more efficient when data changes often.       
+
+
+b. It offers a more efficient way of working when data frequently changes     
+->Correct
+That's right! Using a single source of truth allows you to edit multiple items at the same time if they reference the same data, 
+reduces odds of typing errors, and is more efficient when data changes often.       
+
+c. Data flows both ways, so it can be edited from anywhere ->wrong 
+
+d. It allows you to edit multiple items from a single point     
+->Correct
+That's right! Using a single source of truth allows you to edit multiple items at the same time if they reference the same data, 
+reduces odds of typing errors, and is more efficient when data changes often.       
+
+
+
+###<div>
+在 React 中，`<div>` 是一个常用的 HTML 元素标签，表示一个容器或一个块级元素。它的作用是将内容分组，并能在网页中形成结构化的布局。
+
+在你提到的 React 组件的返回语句中：
+
+```jsx
+return (
+  <div>
+    <PromoHeading />
+  </div>
+);
+```
+
+这里的 `<div>` 主要有以下几个作用：
+
+1. **结构化布局**：`<div>` 用于包裹并组织组件或其他元素。在这个例子中，它将 `PromoHeading` 组件包裹在其中。你可以把 `<div>` 想象成一个“容器”，它用来在页面中定义一个区域，包含某些内容。
+
+2. **样式控制**：你可以通过 CSS 来控制 `div` 的外观。例如，通过给 `<div>` 添加类名 `className="promo-container"`，你可以使用 CSS 来设置背景色、边框、内外边距等。
+
+3. **渲染多个元素**：在 React 中，一个组件的 `return` 语句必须返回一个单一的父元素。即使你有多个子元素，也需要将它们包裹在一个容器中，比如 `<div>`，以确保返回一个唯一的 JSX 元素。因此，`<div>` 起到了封装多个元素的作用。
+
+需要注意的是，`<div>` 本身没有什么特殊的功能，它只是 HTML 中的一个基本元素。在 React 中，它常常作为结构化内容的容器，方便组织和渲染页面中的多个元素或组件。
+
+###
+`export default Promo` 是一个 JavaScript 语法，用来将 `Promo` 组件（或任何变量、函数等）作为模块的默认导出。
+
+在 React 中，`export default` 的作用是让这个组件可以在其他文件中被导入并使用。具体来说，`Promo` 组件被标记为默认导出后，其他地方就可以通过 `import` 语句引用它。
+
+
+###export default Promo
+解释：
+1. **默认导出**：  
+   `export default Promo` 是将 `Promo` 组件导出为该模块的默认导出。你可以在另一个文件中通过以下方式导入它：
+
+   ```jsx
+   import Promo from './Promo';
+   ```
+
+   这里，`Promo` 就是被默认导出的组件。在导入时，不需要使用大括号 `{}`，直接使用组件名称即可。
+
+2. **与命名导出的区别**：
+   除了 `export default`，还可以使用命名导出（`export`）。例如：
+
+   ```jsx
+   export { Promo };
+   ```
+
+   在使用命名导出时，导入时需要使用相同的名称，并且使用大括号：
+
+   ```jsx
+   import { Promo } from './Promo';
+   ```
+
+   使用 `export default` 时，只能有一个默认导出，而命名导出可以有多个。
+
+### 总结：
+- `export default Promo` 将 `Promo` 组件作为该模块的默认导出。
+- 通过 `import Promo from './Promo'`，可以在其他文件中引用并使用 `Promo` 组件。

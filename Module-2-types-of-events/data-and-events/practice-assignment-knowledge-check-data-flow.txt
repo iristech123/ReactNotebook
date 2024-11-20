@@ -1,0 +1,137 @@
+1.
+Question 1
+Usually, a React app consists of many components, organized as a component tree.
+
+a. True
+b. False
+
+Correct ->True
+That’s correct, a React app is organized as a tree of components.
+
+
+2.
+Question 2
+Uni-directional data flow is...
+
+
+a. The term that describes the one-way flow of components in a React app
+b. The term that describes the one-way flow of data in a React app.
+c. The term that describes the one-way flow of DOM updates in a React app
+
+Correct -> b. The term that describes the one-way flow of data in a React app.
+Correct. Uni-directional flow of data is synonymous with one-way data flow.
+
+
+3.
+Question 3
+A component can, at any given time_______. Select all that apply.
+
+
+a. Receive data as props
+->Correct
+That’s right. You can receive data as props.
+
+
+b. Pass data as props and receive data as props at the same time
+->Correct
+That’s right. You can pass data as props and receive data as props at the same time.
+
+
+c. Pass data as props
+->Correct
+That’s right. You can pass data as props.
+
+
+
+4.
+Question 4
+You can only pass a single prop to a component.
+
+a. True 
+b. False 
+
+Correct->b. False
+You can pass more than a single prop.
+
+
+5.
+Question 5
+The props parameter is:
+
+a. An array 
+b. An object 
+c. A string 
+d. A boolean 
+
+Correct -> d. A boolean 
+The props parameter is an object.
+
+
+
+6.
+Question 6
+Consider the following piece of code:
+
+function MyMenu() {  
+  return (  
+    <div>  
+      <Appetizers />  
+    </div>  
+  )  
+} 
+
+Which element of this code represents a child component?
+a. MyMenu()
+b. <div>
+c. return
+d. <Appetizers />
+
+Correct -> d. <Appetizers />
+That’s right! <Appetizers /> is the name of the child component. In this case, it is defined in a separate file.
+
+
+### 总结
+
+1. **Question 1**
+   - **问题**: 通常，React 应用程序由许多组件组成，这些组件按组件树的方式组织。
+   - **答案**: 对，React 应用程序通常是由组件组成的树形结构。
+   
+2. **Question 2**
+   - **问题**: 单向数据流是...
+   - **答案**: 描述 React 应用中数据单向流动的术语。
+
+3. **Question 3**
+   - **问题**: 组件可以在任何时候______。选择所有适用项。
+   - **答案**: 
+     - 接收数据作为 props。
+     - 同时传递和接收数据作为 props。
+     - 传递数据作为 props。
+
+4. **Question 4**
+   - **问题**: 你只能传递单个 prop 给组件。
+   - **答案**: 错误。你可以传递多个 prop。
+
+5. **Question 5**
+   - **问题**: props 参数是什么？
+   - **答案**: props 参数是一个对象。
+
+6. **Question 6**
+   - **问题**: 考虑以下代码段：
+     ```jsx
+     function MyMenu() {  
+       return (  
+         <div>  
+           <Appetizers />  
+         </div>  
+       )  
+     }
+     ```
+     哪个元素代表子组件？
+   - **答案**: `<Appetizers />` 是子组件的名称。
+
+### 关键点：
+- React 中的应用程序通常是组件的树形结构。
+- 数据在 React 中是单向流动的，通常从父组件流向子组件。
+- 组件可以同时传递和接收 props。
+- props 是一个对象，可以包含多个属性，而不仅仅是一个属性。
+- 在 React 中，一个组件可以嵌套另一个组件，嵌套的组件被称为子组件。

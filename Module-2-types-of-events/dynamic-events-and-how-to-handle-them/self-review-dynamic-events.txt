@@ -1,0 +1,96 @@
+1.
+Question 1 ->False 
+In React, you are not allowed to code a separate function that should be run to handle a click event.
+
+Correct. Passing the function name such as “clickHandler” to the onClick handler, and wrapping it in a JSX expression, then coding a clickHandler function declaration, is a common way of handling a click event in React.
+
+2.
+Question 2 -> True 
+Event-handling attributes in React are named almost the same as in HTML. Syntactically, the only difference is in the capitalization.
+
+That's right. Syntactically, the only difference is that HTML attributes are all lowercased, while React attributes are camelCased.
+
+
+3.
+Question 3 ->You cannot invoke an event-handling function from a JSX expression.
+What's wrong with this code? 
+<button onClick={handleClick()}>
+  Click me
+</button>
+
+
+a.The event-handling attribute should be all lowercased.
+b.You cannot invoke an event-handling function from a JSX expression.
+c.This code should work.
+
+
+b is Correct. This code would not work. The code that would work would need to be as follows: onClick={handleClick}.
+
+
+### 翻译与总结
+
+---
+
+#### **问题 1**  
+**在 React 中，不能编写单独的函数来处理点击事件。**
+
+**答案：False（错误）**
+
+- **解释**：  
+  在 React 中，为点击事件编写单独的处理函数是一种常见的方法。例如，你可以将函数名（如 `clickHandler`）传递给 `onClick`，并将其封装在 JSX 表达式中。
+- **正确代码示例**：
+  ```jsx
+  function clickHandler() {
+    console.log('Button clicked!');
+  }
+
+  return <button onClick={clickHandler}>Click me</button>;
+  ```
+
+---
+
+#### **问题 2**  
+**React 中的事件处理属性和 HTML 中的名称几乎相同，唯一的语法差别在于大小写。**
+
+**答案：True（正确）**
+
+- **解释**：  
+  React 和 HTML 的事件处理属性名称很相似，但 React 使用 **驼峰式命名法**（camelCase），而 HTML 则是全小写。
+- **示例对比**：
+  - HTML:
+    ```html
+    <button onclick="handleClick()">Click me</button>
+    ```
+  - React:
+    ```jsx
+    <button onClick={handleClick}>Click me</button>
+    ```
+
+---
+
+#### **问题 3**  
+**以下代码有什么问题？**
+
+```jsx
+<button onClick={handleClick()}>
+  Click me
+</button>
+```
+
+**答案：You cannot invoke an event-handling function from a JSX expression.（不能在 JSX 表达式中调用事件处理函数。）**
+
+- **解释**：  
+  在 React 中，事件处理函数不能直接调用（如 `handleClick()`），因为这会在组件渲染时立即执行函数，而不是等待用户点击触发。正确的做法是传递函数的引用。
+- **正确代码**：
+  ```jsx
+  <button onClick={handleClick}>
+    Click me
+  </button>
+  ```
+
+---
+
+### **总结**
+1. 在 React 中，事件处理函数可以单独定义，并通过 `onClick` 直接引用。
+2. React 的事件处理属性使用驼峰命名法，与 HTML 的全小写不同。
+3. 不要直接调用事件处理函数（如 `handleClick()`），而是传递函数的引用（如 `handleClick`）。

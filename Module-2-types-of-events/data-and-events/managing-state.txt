@@ -1,0 +1,69 @@
+### 总结  
+
+随着 React 应用变得越来越复杂，管理跨组件的状态也变得更加困难。开发者需要一种有效的方式来管理应用中的状态。以下是解决 React 应用状态管理问题的相关概念和方法：
+
+1. **示例场景**  
+   - 一个健康生活应用可以帮助用户记录每天的膳食计划。用户点击已完成的膳食后，应用更新显示剩余的未完成膳食数量。
+   - 该应用包含 3 个组件：`App.js`（根组件）、`mealsList`（膳食列表组件）和 `counter`（计数器组件）。
+   - 问题：`counter` 需要从 `mealsList` 获取状态信息，但它们是兄弟组件，而非父子关系。
+
+2. **提升状态（Lifting State Up）和 Prop Drilling**  
+   - **提升状态**：将状态从 `mealsList` 移到根组件 `App.js`，通过 `mealsList` 将状态传递给 `mealItem` 组件，并将需要的数据传递给 `counter`。
+   - **Prop Drilling**：为了共享状态，必须将状态通过多个层级的组件传递（父->子->孙等）。  
+     - 问题：当源数据发生变化时，整个 Prop 链条都需要同步更新，导致复杂度增加，特别是在应用规模变大时。
+     - 此外，根组件可能需要保存大量状态，其中大部分与其他组件更相关，而非根组件本身。
+
+3. **全局状态问题**  
+   - 当状态需要在多个组件中共享时，这是一个全局状态问题。  
+   - **Context API** 提供了优雅的解决方案。它允许直接共享状态，而不需要 Prop Drilling 和状态提升。
+
+4. **React Context API 的作用**  
+   - Context API 消除了中间人：需要数据的组件可以直接从 Context API 获取数据。  
+   - 实现方式：将状态提取到单独的文件作为 Context，然后需要状态的组件只需导入并使用它。
+
+通过 Context API，React 开发者能够更高效地管理状态，避免复杂的状态传递结构。
+
+---
+
+### 翻译  
+
+随着 React 应用的复杂度增长，管理跨组件的状态也变得复杂。开发者需要有效的工具来解决状态管理问题。以下是关键概念和解决方法：
+
+1. **场景示例**  
+   - 一个健康生活应用帮助用户记录每天的膳食计划，用户点击已完成的膳食后，显示剩余膳食数量。
+   - 包括三个组件：根组件 `App.js`、膳食列表组件 `mealsList` 和计数器组件 `counter`。
+   - **问题**：`counter` 和 `mealsList` 是兄弟组件，`counter` 无法直接获取 `mealsList` 的状态。
+
+2. **提升状态和 Prop Drilling**  
+   - **提升状态**：将状态从 `mealsList` 提升到根组件 `App.js`，通过 Prop 将状态传递到 `mealsItem` 和 `counter`。  
+   - **Prop Drilling**：通过多个组件层级传递状态，增加了复杂度。  
+     - 当状态发生变化时，所有关联组件都需要同步更新，尤其在应用规模扩大时问题更严重。
+     - 根组件需要保存大量状态，其中大部分与其自身无关。
+
+3. **全局状态问题**  
+   - 状态需要跨组件共享时，涉及全局状态管理。  
+   - **Context API** 提供了解决方案，直接共享状态，无需 Prop Drilling 和状态提升。
+
+4. **React Context API 的优点**  
+   - Context API 直接提供状态，不需要中间组件传递。
+   - 状态被提取到单独的文件，组件只需导入状态并使用。
+
+通过 Context API，开发者可以更高效地管理状态，避免复杂的状态传递路径。
+
+
+Question
+Lifting state up is coding your app so that the state from the child component is moved to the parent component and the child component simply receives it via props.      
+
+
+True
+False
+
+Correct->true
+That's correct. Lifting state up is about cutting the state from the child component and moving it to the parent component's code, with the intent of making the state available in sibling components.      
+
+### 要点翻译总结  
+
+**提升状态（Lifting State Up）**是指将状态从子组件中移到父组件，使得状态可以通过父组件共享给兄弟组件，子组件只需通过 `props` 接收状态。
+
+答案：**True（正确）**  
+提升状态的目的是将状态集中管理，方便在兄弟组件之间共享。
