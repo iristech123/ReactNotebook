@@ -1,0 +1,89 @@
+以下是关键知识点的总结：
+
+1. **条件渲染与状态 (State)**：
+   - **状态**（`state`）是应用正在处理的数据。React 允许基于特定状态值来条件渲染组件。
+   - 例如，在一个生产力应用中，可以根据当前日期显示不同的消息：“工作日”显示“Get it done”，而“周末”显示“Get some rest”。
+
+2. **通过条件语句实现渲染**：
+   - 可以使用 `if` 语句来根据不同条件渲染不同的组件。例如，使用 `getDay()` 获取当前日期并根据日期渲染不同的组件：
+     ```javascript
+     function CurrentMessage() {
+         const day = new Date().getDay();
+         if (day >= 1 && day <= 5) {
+             return <Workdays />
+         }
+         return <Weekends />
+     }
+     ```
+
+3. **使用元素变量进行条件渲染**：
+   - 可以将条件逻辑与渲染代码分开，使用**元素变量**来提高代码可读性和简洁性。例如：
+     ```javascript
+     function CurrentMessage({day}) {
+         const weekday = (day >= 1 && day <= 5);
+         const weekend = (day >= 6 && day <= 7);
+         let message;
+
+         if (weekday) {
+             message = <Workdays />
+         } else if (weekend) {
+             message = <Weekends />
+         }
+         return message;
+     }
+     ```
+
+4. **使用逻辑与操作符（`&&`）进行条件渲染**：
+   - 通过逻辑与操作符（`&&`），可以在条件为真时渲染 JSX 元素。例如，以下组件在用户输入非零字符时显示额外消息：
+     ```javascript
+     function LogicalAndExample() {
+         const val = prompt('Anything but a 0');
+         return (
+             <div>
+                 <h1>Please don't type in a zero</h1>
+                 {val && <h2>Yay, no 0 was typed in!</h2>}
+             </div>
+         );
+     }
+     ```
+   - 如果 `val` 不是假值（如零或空字符串），则显示 `<h2>` 内容。
+
+总结：React 中可以使用条件渲染来根据不同的状态或条件动态地显示不同的组件或内容。常用的方法有 `if` 语句、元素变量和逻辑操作符（`&&`）。
+
+补充：
+在 React 中，**条件渲染**指的是根据某个特定的 **状态值 (state)** 来决定是否渲染一个组件或其内容。这意味着你可以根据应用的不同状态，动态地显示不同的 UI 元素。
+
+### 解释：
+React 中的 **状态 (state)** 是每个组件内部存储的数据，组件可以控制或改变这些数据。通过检查组件的状态值，可以决定渲染不同的组件或不同的内容。
+
+### 示例：
+假设你有一个按钮，它根据用户是否登录来显示不同的内容。我们可以通过组件的 **状态** 来实现这个条件判断。
+
+```jsx
+import React, { useState } from 'react';
+
+function App() {
+  // 用 state 来管理用户的登录状态
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return (
+    <div>
+      {/* 根据 isLoggedIn 状态值来决定渲染哪个组件 */}
+      {isLoggedIn ? <p>欢迎回来!</p> : <p>请登录</p>}
+
+      {/* 点击按钮切换登录状态 */}
+      <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+        {isLoggedIn ? '注销' : '登录'}
+      </button>
+    </div>
+  );
+}
+```
+
+### 关键点：
+1. **状态 (state)**：`isLoggedIn` 用来存储用户是否已登录。
+2. **条件渲染**：根据 `isLoggedIn` 的值，渲染不同的内容。当 `isLoggedIn` 为 `true` 时显示欢迎信息，否则显示“请登录”。
+3. **按钮点击**：按钮的点击事件改变 `isLoggedIn` 的值，切换状态，从而触发组件重新渲染，显示不同的内容。
+
+### 总结：
+**条件渲染**是基于组件的状态值（或其他条件）来决定哪些 UI 元素应该被渲染。在 React 中，通常使用 `if` 语句、三元运算符（`? :`）或逻辑运算符（`&&`）来实现这种条件判断。

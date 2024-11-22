@@ -1,0 +1,74 @@
+以下是关于**条件渲染**的关键知识点总结：
+
+1. **条件渲染的目标**：
+   - 在 React 中，通过条件渲染，可以根据特定条件动态地展示不同的内容。视频中的目标是使用本地计算机时间来生成不同的消息，显示在同一个页面中。
+
+2. **使用 `if-else` 语句进行条件渲染**：
+   - 在应用中，可以通过 `if-else` 语句来根据时间或其他变量的值，渲染不同的内容。
+   - 示例：根据 `day` 变量的值显示不同的消息，像是“Happy Monday” 或 “Tuesday, 4 days to go”。
+
+3. **使用 `toLocaleString` 获取日期**：
+   - 使用 JavaScript 的 `Date` 对象，并结合 `toLocaleString()` 方法，可以格式化日期，显示星期几的完整名称（如 Monday, Tuesday）。
+
+4. **使用 `ternary` 运算符**：
+   - `ternary` 运算符（条件运算符）用于在 JSX 中进行更简洁的条件渲染。例如，使用 `morning` 变量判断是否显示“Have you had breakfast yet？”。
+   - 示例：
+     ```javascript
+     {morning ? <h2>Have you had breakfast yet?</h2> : ''}
+     ```
+
+5. **动态更新消息**：
+   - 通过改变 `getHours` 的值，可以动态更新消息的显示，例如根据当前时间是早上或下午，来显示不同的内容。
+
+6. **总结**：
+   - React 中的条件渲染可以通过 `if-else` 语句和 `ternary` 运算符来根据特定条件渲染不同的组件或元素。通过这种方式，开发者能够创建更加动态和响应式的用户界面。
+
+此视频教会了使用 `if-else` 和 `ternary` 运算符来实现条件渲染，使得组件能够根据条件动态渲染内容。
+
+
+Question
+
+True or false: You can use JavaScript's logical AND operator in a React component's return statement to conditionally render some JSX elements based on whether a value to the right of the AND operator evaluates to true.      
+
+
+False
+True
+
+Correct -> False
+That's correct: The logical AND operator is used to conditionally render some JSX elements based on whether a value to the LEFT of the AND operator evaluates to true.
+
+抱歉，我之前的回答可能没有完全解释清楚。让我们更详细地分析一下。
+
+在题目中，“**You can use JavaScript's logical AND operator in a React component's return statement to conditionally render some JSX elements based on whether a value to the right of the AND operator evaluates to true.**”
+
+根据题目的描述，**问题的重点**是：“根据**右侧的值**是否为 true 来条件渲染 JSX 元素”。但在逻辑 AND (`&&`) 运算符的正确用法中，**判断条件是左侧的值**，而不是右侧的值。
+
+### 正确的理解：
+在 React 中使用 `&&` 运算符时，它是根据 **左侧的值** 来决定是否渲染右侧的内容：
+
+- **如果左侧的值为 `true`**，则右侧的 JSX 元素会被渲染。
+- **如果左侧的值为 `false`**，则右侧的 JSX 元素不会被渲染。
+
+### 示例：
+
+```jsx
+function MyComponent() {
+  const isLoggedIn = true;
+
+  return (
+    <div>
+      {isLoggedIn && <p>欢迎回来!</p>}  {/* 如果 isLoggedIn 为 true，渲染 <p>标签 */}
+    </div>
+  );
+}
+```
+
+在这个例子中：
+- `isLoggedIn` 为 `true`，所以 `<p>欢迎回来!</p>` 会被渲染。
+- 如果 `isLoggedIn` 为 `false`，`<p>` 标签不会渲染。
+
+### 为什么是 `False`？
+在 React 中，**逻辑 AND 运算符是基于左侧的条件判断来决定是否渲染右侧的内容**。题目错误地描述了条件判断的“右侧值”，这就导致了答案是 `False`。
+
+**总结：**
+正确的回答是 `False`，因为条件渲染依赖的是**左侧的条件值**，而题目中的描述说成了“右侧的值”。

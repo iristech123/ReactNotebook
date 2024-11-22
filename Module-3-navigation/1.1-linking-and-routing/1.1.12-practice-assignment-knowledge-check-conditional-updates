@@ -1,0 +1,105 @@
+1.
+Question 1
+Select all the conditional structures that exist in JavaScript. Select all that apply. 
+
+if-else statement 
+Correct
+Correct. The if-else statement is one of the conditional structures available in JavaScript.
+
+
+ternary operator 
+Correct
+Correct. The ternary operator is one of the conditional structures available in JavaScript.
+
+
+logical && operator
+Correct
+Correct. The logical && operator is one of the conditional structures available in JavaScript.
+
+switch statement 
+Correct
+Correct. The switch statement is one of the conditional structures available in JavaScript.
+1 / 1 point
+
+
+2.
+Question 2
+What will be the output if you ran this code in the browser console: 
+
+true && 5
+false
+true
+5
+undefined
+
+Correct -> 5
+That’s correct! The value that gets output is: 5.
+1 / 1 point
+
+
+3.
+Question 3
+If the value of the test variable evaluates to true, what will the following code render?
+
+< div > {
+      test && < h1 > Hello < /h1>} World</div >
+
+
+Hello World
+An empty div
+World
+Hello
+
+
+Correct->Hello World
+That’s correct! The value of test is true, so <div><h1>Hello</h1>World</div> will be rendered. 
+1 / 1 point
+
+
+4.
+Question 4
+If the value of morning is false, what will the following code render?
+
+{
+   morning ? < h2 > Breakfast time! < /h2> : <h2>Lunch time!</h2 >
+}
+
+Breakfast time!
+Lunch time!
+
+Correct ->Lunch time!
+That’s right! The returned value will be “Lunch time!”. 
+1 / 1 point
+
+5.
+Question 5
+Choose the correct syntax to build a new Date object in JavaScript?
+
+new Date();
+Date(); 
+new Date;
+New Date();
+
+
+Correct -> new Date();
+That’s correct. This code will result in a new object instance of the Date constructor.
+1 / 1 point
+
+### 总结与翻译：
+
+1. **问题 1**：选择所有存在的 JavaScript 条件结构。正确答案包括：
+   - `if-else` 语句：这是 JavaScript 中最常见的条件结构。
+   - **三元操作符**：也是 JavaScript 中的条件结构，常用于简化 if-else 语句。
+   - **逻辑 AND (`&&`) 操作符**：可以用于根据左侧条件是否为 `true` 来判断是否渲染右侧的元素。
+   - **switch 语句**：JavaScript 中的另一种条件结构，适用于多个条件的选择。
+
+   **为什么 `switch` 语句也包括在内**：`switch` 语句是 JavaScript 中常用的条件结构，它允许开发者基于不同的条件值执行不同的代码块。所以它当然也是一个条件结构。
+
+2. **问题 2**：如果你在浏览器控制台中运行代码 `true && 5`，输出是什么？
+   - **正确答案是 5**。
+   - **为什么是 5**：在 JavaScript 中，逻辑 `&&` 运算符返回**第一个假值**，如果没有假值，则返回**最后一个值**。这里 `true && 5` 中 `true` 为真，所以返回 `5`。
+
+3. **问题 5**：选择正确的语法来构建一个新的 `Date` 对象：
+   - **正确答案是 `new Date();`**。
+   - **为什么是 `new Date()`**：`new Date()` 用于创建当前日期和时间的 `Date` 对象。而 `Date()` （没有 `new` 关键字）会返回一个字符串，而不是一个 `Date` 对象。所以 `new Date()` 是正确的语法。
+

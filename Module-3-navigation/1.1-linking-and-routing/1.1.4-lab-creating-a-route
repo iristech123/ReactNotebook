@@ -1,0 +1,56 @@
+### **任务目标：**
+
+在现有代码中新增一个导航链接，该链接指向一个名为 `Contact` 的全新组件。
+
+---
+
+### **步骤总结：**
+
+#### **1. 安装 React Router**
+在项目根目录运行以下命令安装 React Router：  
+```bash
+npm install react-router-dom@6
+```
+
+---
+
+#### **2. 创建 Contact 组件**
+1. **新增文件：** 在 `src` 文件夹下创建 `Contact.js` 文件。  
+2. **定义组件：** 在文件内使用 ES5 函数定义 `Contact` 组件，并导出它：
+   ```javascript
+   function Contact() {
+     return <h1>Contact Little Lemon on this page.</h1>;
+   }
+   export default Contact;
+   ```
+
+---
+
+#### **3. 修改 App.js**
+1. **导入组件：** 在 `App.js` 文件中，导入新建的 `Contact` 组件：  
+   ```javascript
+   import Contact from './Contact';
+   ```
+
+2. **新增导航链接：** 在 `nav` 元素内，添加一个新的 `<Link>` 元素：  
+   ```javascript
+   <Link to="/contact" className="nav-item">Contact</Link>
+   ```
+
+3. **新增路由配置：** 在 `Routes` 元素中，新增一个路由，配置路径和对应组件：  
+   ```javascript
+   <Route path="/contact" element={<Contact />} />
+   ```
+
+---
+
+#### **4. 保存并运行**
+1. 保存所有修改后的文件。
+2. 在浏览器中打开项目，确认导航栏中新增了 **Contact** 链接。  
+3. 点击链接，页面应显示文本：  
+   **"Contact Little Lemon on this page."**
+
+---
+
+### **提示：**
+如果遇到问题，可以回顾 **“The Navbar”** 视频教学，了解如何配置路由和链接。

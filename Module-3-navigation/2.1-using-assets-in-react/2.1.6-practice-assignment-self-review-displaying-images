@@ -1,0 +1,191 @@
+1.
+Question 1
+Is this code a correct way to import an image in React?
+
+
+12345678910111213
+import avatar from "./assets/avatar.png"
+
+function UserImage() {
+   return ( 
+      <div>
+         <img 
+            src={avatar}
+            alt = "User image" 
+         />
+      < /div>
+
+
+
+Yes. 
+
+
+
+No. 
+
+
+Correct
+That’s right, this code is the correct way to import an image in React.
+
+Status: [object Object]
+1 / 1 point
+2.
+Question 2
+Is this code a correct way to import an image in React?
+
+
+123456789101112
+function UserImage() {
+   const avatarImg = "https://picsum.photos/400/265";
+   return ( 
+      <div>
+            <img 
+                  src="avatar.png"
+                  alt="User image" 
+            />
+      </div>
+   )
+
+
+
+Yes 
+
+
+
+No 
+
+
+Correct
+Correct. This code is not valid. The src attribute needs to be as follows: src={avatarImg}
+
+Status: [object Object]
+1 / 1 point
+3.
+Question 3
+What's wrong with this code?
+
+12345
+function ProfileImage() {
+   const profileImg = "https://picsum.photos/400/265";
+   return <img src={profileImg} alt="Profile image" />
+}
+export default ProfileImage;
+
+
+You must surround the img element with a root, wrapping div element.
+
+
+
+There should be parentheses after the return keyword and the img element should spread its attributes over multiple lines.
+
+
+
+Nothing. This code is correct.
+
+
+Correct
+Correct. There's nothing wrong with the code in the question.
+
+Status: [object Object]
+1 / 1 point
+
+
+### **总结**
+---
+
+#### **问题 1**  
+**这段代码是正确的在 React 中导入图片的方式吗？**
+
+```javascript
+import avatar from "./assets/avatar.png";
+
+function UserImage() {
+   return ( 
+      <div>
+         <img 
+            src={avatar}
+            alt="User image" 
+         />
+      </div>
+   );
+}
+```
+
+- **选项：**  
+  - **Yes.** ✅  
+  - **No.**  
+
+**正确答案：Yes**  
+**解析：**  
+这段代码是正确的：  
+- 使用 `import` 引入图片文件路径并赋值给变量 `avatar`。  
+- 在 JSX 中通过 `{avatar}` 动态传递图片路径给 `src` 属性，同时 `alt` 提供替代文本。
+
+---
+
+#### **问题 2**  
+**这段代码是正确的在 React 中导入图片的方式吗？**
+
+```javascript
+function UserImage() {
+   const avatarImg = "https://picsum.photos/400/265";
+   return ( 
+      <div>
+         <img 
+            src="avatar.png"
+            alt="User image" 
+         />
+      </div>
+   );
+}
+```
+
+- **选项：**  
+  - **Yes.**  
+  - **No.** ✅  
+
+**正确答案：No**  
+**解析：**  
+这段代码存在问题：  
+- 图片路径 `"avatar.png"` 无法正确指向网络图片 URL `avatarImg`，因此 `src` 应改为 `{avatarImg}`：  
+  ```javascript
+  <img src={avatarImg} alt="User image" />
+  ```  
+
+---
+
+#### **问题 3**  
+**以下代码有什么问题？**
+
+```javascript
+function ProfileImage() {
+   const profileImg = "https://picsum.photos/400/265";
+   return <img src={profileImg} alt="Profile image" />;
+}
+export default ProfileImage;
+```
+
+- **选项：**  
+  - **You must surround the img element with a root, wrapping div element.**  
+  - **There should be parentheses after the return keyword and the img element should spread its attributes over multiple lines.**  
+  - **Nothing. This code is correct.** ✅  
+
+**正确答案：Nothing. This code is correct.**  
+**解析：**  
+代码完全正确：  
+- `return` 关键字后可以直接返回单个 JSX 元素，不需要额外括号。  
+- 不需要将 `img` 标签包裹在 `div` 中，因为 JSX 中允许单一根元素。  
+
+---
+
+### **总结**  
+
+1. **正确导入图片的方式：**
+   - 本地图片：使用 `import` 引入文件路径，赋值给变量，动态传递到 JSX 的 `src` 属性中。
+   - 网络图片：将 URL 字符串赋值给变量，动态传递到 `src`。
+
+2. **错误示例：**
+   - `src` 中不能直接使用未定义或错误的路径，应通过 JSX 表达式引用变量。
+
+3. **单个 JSX 元素的返回：**
+   - 单一 JSX 元素可直接作为返回值，无需额外包裹或强制使用 `div`。

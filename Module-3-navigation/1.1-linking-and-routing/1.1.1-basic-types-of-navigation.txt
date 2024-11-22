@@ -1,0 +1,78 @@
+**总结：**
+
+在网络开发的早期，没有统一的设计标准，开发者经常进行各种实验。随着时间推移，社区逐渐确立了以实用性为核心的最佳实践，强调简单和熟悉性，这在Stephen Krug的《别让我思考》中得到了很好的体现。现代网站导航注重用户友好的界面，避免让用户感到困惑。
+
+### 常见的网站导航类型：
+1. **水平导航栏（Navbar）**  
+   常见于页面顶部，用于显示主要链接。  
+2. **垂直导航菜单（Sidebar）**  
+   通常位于页面侧边栏，用于显示次要或分类链接。  
+3. **隐藏菜单（Burger Menu）**  
+   使用“三条横线”图标表示，点击后显示内容，常见于移动端。  
+4. **下拉菜单（Mega Menu）**  
+   适合需要展示大量链接的电商网站等。  
+5. **页脚导航（Footer Navigation）**  
+   在页面底部显示多个链接列。  
+
+这些导航类型可以单独或组合使用。例如，在大屏幕上显示水平导航栏，而在小屏幕上转换为汉堡菜单。
+
+### React中的导航工作原理：  
+与传统HTML导航不同，React应用将整个页面加载到一个单独的`div`中。React通过虚拟DOM的变化控制视图更新，模拟多页面切换的效果。为了实现这种导航，需要使用**React Router**库，它提供多页面体验的路由功能。
+
+通过学习本视频，你了解了网站的基本导航类型以及React中导航的实现方式。
+
+
+补充：在网页开发中，**路由功能**（Routing）指的是管理用户请求的不同URL，并决定应该显示什么内容或页面的机制。
+
+在多页面体验中，**路由功能**的具体含义根据应用类型（多页应用或单页应用）有所不同：
+
+---
+
+### **1. 多页应用中的路由功能**
+- **含义：**  
+  路由功能指浏览器根据URL路径加载对应的HTML文件或页面。当用户点击链接或访问某个URL时，服务器会返回一个新的HTML页面。  
+- **工作方式：**  
+  1. 用户点击链接或输入URL。
+  2. 浏览器发送HTTP请求到服务器。
+  3. 服务器根据URL返回对应的HTML文件。
+  4. 浏览器加载并渲染新页面。  
+- **特点：**  
+  - 每个页面独立存在。
+  - 页面跳转会导致完整的页面刷新。
+
+---
+
+### **2. 单页应用（SPA）中的路由功能**
+- **含义：**  
+  路由功能模拟了多页面的体验，即根据URL变化在不刷新页面的情况下动态切换内容。实际上，不是加载新的HTML页面，而是通过加载或替换组件，更新当前页面的内容。  
+- **工作方式：**  
+  1. 用户点击链接或访问某个URL。
+  2. 浏览器检测URL变化，并将其传递给SPA框架（如React）。
+  3. SPA框架通过**路由库**（如React Router）决定应该加载哪个组件，并动态更新页面内容。
+  4. 用户感知到页面切换，但实际上没有刷新浏览器。  
+- **特点：**  
+  - 无需完整页面刷新，提升性能。
+  - 路由库会处理URL变化并渲染对应内容。
+  - 提供类似多页面的体验，但本质上页面始终加载在一个HTML文件中。
+
+---
+
+### **总结**
+在多页应用中，**路由功能**是由服务器负责，通过URL加载不同的HTML页面；而在单页应用中，**路由功能**由前端框架负责，模拟多页面体验，通过动态更新页面内容实现导航功能。
+
+Which of the following statements are correct regarding how navigation is implemented in React? Select all that apply.      
+
+
+In React, the entire app is loaded inside a single div, you're not actually visiting different pages.     
+
+Correct
+Well done. In React, the entire app is loaded inside a single div, you're not actually visiting different pages, and Different views are rendered when React makes changes to the Virtual DOM, with React updating the real DOM accordingly.      
+
+
+Navigation in React is achieved by linking to HTML files     
+
+
+Different views are rendered when React makes changes to the Virtual DOM, with React updating the real DOM accordingly     
+
+Correct
+Well done. In React, the entire app is loaded inside a single div, you're not actually visiting different pages, and Different views are rendered when React makes changes to the Virtual DOM, with React updating the real DOM accordingly.      

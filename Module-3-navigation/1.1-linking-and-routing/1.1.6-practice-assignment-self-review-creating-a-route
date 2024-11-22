@@ -1,0 +1,111 @@
+1.
+Question 1
+What did you need to install in order to create routes?
+
+
+three.js
+
+
+
+router-dom
+
+
+
+react-dom
+
+
+
+react-router-dom
+
+
+Correct
+Correct. That’s true, you need to install the react-router-dom package in order to create routes.
+
+Status: [object Object]
+1 / 1 point
+2.
+Question 2
+Instead of anchor tags, what tag did you use with React Router?
+
+
+the to attribute
+
+
+
+the Link tag
+
+
+
+the To tag
+
+
+
+the element attribute
+
+
+Correct
+Correct. That’s true, when you use React Router, you need to use the Link tag instead of the anchor tag.
+
+Status: [object Object]
+1 / 1 point
+3.
+Question 3
+What's wrong with this code?
+
+123
+<Link to="/" className="nav-item" href="/">
+  Home
+<Link>
+
+
+The href attribute should not be used here.
+
+
+
+You cannot have hyphens in the value of the className attribute.
+
+
+
+The to attribute can't have just the "/" value.
+
+
+Correct
+Correct. You should not be using the href attribute here.
+
+Status: [object Object]
+1 / 1 point
+
+### 翻译和总结：
+
+1. **问题 1：**  
+   为了创建路由，您需要安装什么？
+
+   - **正确答案：** `react-router-dom`  
+   要创建路由，您需要安装 `react-router-dom` 包。
+
+2. **问题 2：**  
+   使用 React Router 时，应该使用哪个标签代替锚点标签？
+
+   - **正确答案：** `Link` 标签  
+   使用 React Router 时，应该使用 `Link` 标签，而不是传统的锚点 (`<a>`) 标签。
+
+3. **问题 3：**  
+   以下代码有什么问题？
+   ```jsx
+   <Link to="/" className="nav-item" href="/">
+     Home
+   </Link>
+   ```
+   - **正确答案：** 不应该在 `Link` 标签中使用 `href` 属性。  
+   `href` 属性在 React Router 中是不需要的，应该使用 `to` 属性来指定路径。
+
+
+补充：在第二题中，问题问的是：“使用 React Router 时，应该使用哪个标签代替锚点标签？”
+
+- **正确答案是：** `Link` 标签，而不是 `the element attribute`。
+
+### 解释：
+- React Router 使用的是 `Link` 标签，它的作用与传统的锚点标签（`<a>`）相似，用于在不同的页面或组件间进行导航。`Link` 标签的关键属性是 `to`，而不是 `href`，用来指定导航的目标路径。
+- **`element attribute`** 并不是一个合适的答案，因为在 React Router 中并没有名为 "element" 的属性用于导航。导航是通过 `to` 属性实现的，且必须使用 `Link` 标签来替代传统的 `<a>` 标签。
+
+简而言之，`the element attribute` 不是用于代替锚点标签的正确选择，正确的选择是 `Link` 标签。

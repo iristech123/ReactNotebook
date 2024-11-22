@@ -1,0 +1,88 @@
+### **翻译与总结**
+
+---
+
+#### **翻译**
+
+**学习 React Player 包的安装与设置**  
+在本视频结束时，你将学会如何安装 `react-player` 包，并在 React 应用中渲染媒体播放器。此外，你还将了解如何设置一些常用选项，例如自动播放和初始音量。
+
+以下是示例应用的操作步骤：
+
+1. **创建基础应用：**  
+   示例应用通过 `create-react-app` 创建，目前只渲染一个显示 “React Player Example” 的标题。
+
+2. **安装和导入模块：**  
+   - 使用以下命令安装 `react-player` 模块：  
+     ```bash
+     npm install react-player
+     ```
+   - 安装完成后，在需要的组件中导入模块：  
+     ```javascript
+     import ReactPlayer from "react-player";
+     ```
+
+3. **添加视频播放器组件：**  
+   - 将 `ReactPlayer` 组件渲染到 `App` 组件中。
+   - 设置常用属性：
+     - **自动播放禁用：** `playing={false}`
+     - **初始音量设置为 50%：** `volume={0.5}`
+
+4. **设置视频 URL：**  
+   - 为视频链接定义变量，例如：  
+     ```javascript
+     const videoURL = "https://example.com/video.mp4";
+     ```
+   - 将该变量绑定到组件属性：  
+     ```javascript
+     <ReactPlayer url={videoURL} playing={false} volume={0.5} />
+     ```
+
+5. **保存并测试：**  
+   - 保存文件，运行项目，在浏览器中验证视频是否正确显示。
+   - 确保视频可播放，并符合设置要求（如初始音量为 50%、非自动播放）。
+
+6. **参考资源：**  
+   - 项目 GitHub 页面：[CookPete/react-player](https://github.com/CookPete/react-player)  
+   - 文档中包含关于播放器设置的详细信息，例如播放速度、循环播放、轻量模式等。  
+   - 页面右侧的示例演示可以帮助你更好地了解这些设置。
+
+通过学习和实践，你可以灵活使用 `react-player` 包来定制视频播放体验。
+
+---
+
+#### **总结**
+
+1. **安装与导入：**
+   - 使用 `npm install react-player` 安装包。
+   - 导入方式：`import ReactPlayer from "react-player"`。
+
+2. **组件设置：**
+   - 常用设置包括：
+     - 禁止自动播放：`playing={false}`。
+     - 初始音量：`volume={0.5}`。
+   - 将视频 URL 绑定到组件：`url={videoURL}`。
+
+3. **测试与验证：**
+   - 保存后在浏览器中测试，确认播放器功能和设置正确。
+
+4. **资源与文档：**
+   - GitHub 页面和演示提供了丰富的自定义选项和实践案例。
+
+通过以上步骤，可以轻松实现视频播放功能并优化用户体验。
+
+
+Question
+
+True or false?  
+
+When you render the React player in your app, you can add code that determines whether or not a video starts automatically when the page loads.       
+
+
+True
+
+
+False
+
+Correct
+That's correct! In addition to linking a video URL, you can alter settings such as automatic playback and starting volume for the React player.      

@@ -1,0 +1,126 @@
+1.
+Question 1
+In React, data flows in one way: from a parent component to a child component.
+a. True
+b. False
+
+Correct -> a. True
+That’s correct. The above statement is true. 
+1 / 1 point
+
+
+2.
+Question 2
+Why is one-way data flow important in React?
+
+a. It ensures that the data is flowing from top to bottom in the component hierarchy.
+b. It ensures that the data is flowing from bottom to top in the component hierarchy.
+
+Correct -> a. It ensures that the data is flowing from top to bottom in the component hierarchy.
+Correct. This ensures that the data is flowing from top to bottom in the component hierarchy.
+1 / 1 point
+
+
+3.
+Question 3
+True or false? State data is the data inside a component that a component can mutate.
+a. True
+b. False
+
+Correct -> a. True
+Correct. State data is data inside a component that a component, which that component controls and can mutate.
+1 / 1 point
+
+
+4.
+Question 4
+What is prop drilling?
+a. Prop drilling is a situation where you are passing data from a parent to a child component, then to a grandchild component, and so on, until it reaches a more distant component further down the component tree, where this data is required
+b. Prop drilling is a situation where you are passing data from a child, to a parent component, then to a grandparent component, and so on, until it reaches a more distant component further up the component tree, where this data is required.
+
+Correct -> a
+Correct. Prop drilling is a situation where you are passing data from a parent to a child component, then to a grandchild component, and so on, until it reaches a more distant component further down the component tree, where this data is required
+1 / 1 point
+
+
+5.
+Question 5
+The distinction between stateful and stateless components is that the latter doesn't have its own state. 
+a. True
+b. False
+
+Correct -> a. True
+That’s correct! This statement is true.
+1 / 1 point
+
+6.
+Question 6
+Choose the correct statement.
+a. Remember that you should always change the values of props in children components; you should never work with them as they are. In other words, props are mutable.
+b. Remember that you should never change the values of props in children components; you should only work with them as they are. In other words, props are immutable.
+
+Correct -> b
+That’s correct! Props are immutable and thus you should not attempt to update them in children components.
+1 / 1 point
+
+7.
+Question 7
+Is this code valid?
+
+function App() {
+   const handler = () => console.log('fourth example')
+   return ( 
+      <div> 
+        <button onClick = {handler} >
+          Click Me!
+        </button>
+      </div>
+   )
+}
+
+a. Yes
+b. No
+
+Correct -> a. Yes
+Correct! This code is an example of a valid onClick event handler.  
+1 / 1 point
+
+
+8.
+Question 8
+Is this code valid? 
+
+<button onClick={ () => console.log('clicked') }> 
+  Click me
+</button>
+
+a. Yes
+b. No
+
+Correct -> a. Yes
+Correct! This code is an example of a valid onClick event handler.  
+1 / 1 point
+
+
+9.
+Question 9
+Select the correct statement: The useState hook...
+a.  ... lets you hook into React state and lifecycle features from a component.
+b.  ...is not  part of React; you must import it from a third-party package.
+c.  ... has a convention that if the state variable is named, for example, counter, the function to update this counter variable should be named counterFunction.
+d.  ... should never be called at the top level of a React component.
+
+Correct-> a
+1 / 1 point
+
+
+10.
+Question 10
+The Context API allows you to:
+a. Avoid having to pass state down through multiple levels of components.
+b. Avoid having to use the return statement in a child component.
+c. Avoid having to keep your components modular.
+
+Correct -> a. Avoid having to pass state down through multiple levels of components.
+Correct. Using Context API allows you to bypass having to pass state down through multiple levels of components.
+1 / 1 point

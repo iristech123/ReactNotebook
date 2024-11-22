@@ -1,0 +1,63 @@
+### **总结与翻译**
+
+#### **翻译：**
+到现在为止，你应该已经熟悉了如何创建 React 组件并向它们添加文本。但仅仅有文本对于一个应用来说是不够的，用户期待看到图像、视频或音频等更丰富的内容体验。幸运的是，你将学习如何使用资源（assets）来丰富你的应用。  
+通过这段视频，你将了解什么是资源、如何在 React 中组织这些资源，以及常见的资源导入方式。
+
+**什么是资源（Assets）？**  
+在 React 中，资源指的是应用在运行时需要的文件，例如图像、样式表、字体、媒体文件等。如果缺少这些资源，应用可能会表现出意料之外的行为，比如显示占位符或使用默认字体。因此，保持资源文件的可用性和组织性非常重要。
+
+**资源的存储方式：**  
+- **`assets` 文件夹：** 通常在 `src` 文件夹内创建一个 `assets` 文件夹，存放所有需要的资源文件。
+- **`public` 文件夹：** 用于存放那些不需要通过 React 组件导入的资源，比如 `favicon`。这些文件不会影响组件的编译。
+
+**存储原则：**  
+- 如果应用在没有某个文件的情况下仍然可以正常编译，那么它可以放在 `public` 文件夹中。
+- 如果某个资源需要被组件导入，则应该存放在 `assets` 文件夹中。
+
+#### **如何使用资源：**
+1. **准备资源：**  
+   假设你正在开发一个帮助人们领养宠物的应用，你创建了一个 `assets` 文件夹并将动物的图片存放其中。
+2. **导入资源：**  
+   - 使用 `import` 语句：
+     ```javascript
+     import cat from './assets/cat.jpg';
+     ```
+     在组件中通过 `<img src={cat} />` 引用资源。
+   - 使用 `require`：
+     在 JSX 中直接使用 `require` 表达式，不需要额外的 `import` 语句：
+     ```javascript
+     <img src={require('./assets/cat.jpg')} />
+     ```
+3. **最佳实践：**
+   - 将资源命名为描述性名称，例如 `cat`。
+   - 优先将需要导入的文件存放在 `assets` 文件夹中，避免将它们放在 `public` 中。
+
+#### **视频内容总结：**
+1. 了解 React 中资源的概念：包括图像、字体、样式表等文件。
+2. 掌握如何组织资源文件：`assets` 用于需要导入的文件，`public` 用于无需导入的文件。
+3. 学习资源的导入方式：使用 `import` 或 `require`。
+
+Question
+
+You are developing a web-based clock app that allows the user to set alarms to go off at specific times.   
+
+Which of the following assets are ideally stored in an Assets folder within the src folder of your project? Choose all that apply.      
+
+
+An image of a clock that is displayed in the app     
+
+Correct
+That's right!  You should keep the sound file and image file in the Assets folder, as they will be used directly in your app components and are necessary for the app to work correctly.
+
+
+An icon that appears in the browser tab for the app     
+
+
+The robots.txt file, which is used to manage your app's interaction with search engines      
+
+
+An alarm sound that plays when the specified time is reached in your app     
+
+Correct
+That's right!  You should keep the sound file and image file in the Assets folder, as they will be used directly in your app components and are necessary for the app to work correctly.

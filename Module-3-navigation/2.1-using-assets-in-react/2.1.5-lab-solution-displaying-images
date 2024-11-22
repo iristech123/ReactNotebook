@@ -1,0 +1,63 @@
+### **翻译与总结**
+
+#### **翻译**
+**解决方案：显示图片**  
+以下是完整的 `App.js` 文件代码：  
+```javascript
+import logo from "./assets/logo.png";
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Task: Add an image below</h1>
+      <img src={logo} alt="Logo" />
+    </div>
+  );
+}
+```
+
+**输出效果：**  
+页面显示标题 "Task: Add an image below" 以及从 `assets` 文件夹中加载的图片 `logo.png`。
+
+---
+
+**步骤 1**  
+首先，导入了图片 `logo`：
+```javascript
+import logo from "./assets/logo.png";
+```
+
+---
+
+**步骤 2**  
+接着，在 `return` 语句中添加了新的 `<img>` 元素：
+- 使用 `src` 属性引用 `logo` 的值（JSX 表达式）。  
+- 设置 `alt` 属性为 `"Logo"`。  
+
+完整代码如下：
+```javascript
+function App() {
+  return (
+    <div className="App">
+      <h1>Task: Add an image below</h1>
+      <img src={logo} alt="Logo" />
+    </div>
+  );
+}
+```
+
+---
+
+#### **总结**
+1. **核心步骤：**
+   - **导入图片**：使用 `import` 语句加载图片到组件。
+   - **显示图片**：在组件的 JSX 中，通过 `<img>` 标签展示图片，`src` 指向导入的变量。
+   - **设置描述**：添加 `alt` 属性提供图片的文字描述。
+
+2. **最终实现功能：**
+   页面显示标题和一张从本地文件夹加载的图片。该图片路径通过 `import` 引入并绑定到 `src` 属性中。
+
+3. **关键点：**
+   - 确保图片路径正确，通常是相对于文件的相对路径。
+   - 使用语义化的 `alt` 属性，提高网页的可访问性。
+   - 确保图片存储在 React 的 `src` 或 `public` 文件夹中（根据应用需求）。

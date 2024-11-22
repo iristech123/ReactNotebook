@@ -1,0 +1,78 @@
+1.
+Question 1
+What is a stateless component?
+
+a. A  component that doesn’t track its own state.
+b. A component that doesn’t track its parent’s state.
+
+Correct ->a. A  component that doesn’t track its own state.
+Correct. A stateless component doesn’t track its own state. 
+
+
+2.
+Question 2
+A stateful component must have a props object.
+
+a. False
+b. True
+
+Correct -> a. False
+Correct. Whether or not a stateful component has a props object is irrelevant. 
+
+
+3.
+Question 3
+To turn a stateless component into a stateful component, you must pass it a props object.
+
+a. True
+b. False
+
+Correct -> b. False
+Correct. Whether or not a stateful component receives a props object is irrelevant. 
+
+4.
+Question 4
+The process of lifting up state can lead to: 
+Select all that apply.
+
+a. A stateless component becoming a stateful component.
+Correct -> a
+That’s right! Lifting up state means moving state up from a child to the parent component 
+- meaning that a previously stateless parent component becomes a stateful component, and a previously stateful child component becomes a stateless component.
+
+b. A stateful component becoming a stateless component.
+Correct -> b 
+That’s right! Lifting up state means moving state up from a child to the parent component 
+- meaning that a previously stateless parent component becomes a stateful component, and a previously stateful child component becomes a stateless component. 
+
+c. A stateful child component controlling the state of a stateful parent component. -> wrong
+d. A stateful child component controlling the state of a stateless parent component. -> wrong
+
+
+5.
+Question 5
+A prop doesn't have to always pass state.
+
+a. True
+b. False
+
+Correct -> a. True
+That’s correct. A prop doesn't have to always pass state.
+
+总结知识点：
+1. **什么是无状态组件（Stateless Component）？**
+   - **答案**：**一个不跟踪自身状态的组件**。无状态组件不保存自己的状态，它们通常只是接收父组件传递的 `props` 并进行渲染。
+
+2. **有状态组件是否必须拥有 `props` 对象？**
+   - **答案**：**不正确**。有状态组件是否有 `props` 对象并不影响它是否是有状态的。即使没有 `props`，有状态组件依然可以通过 `useState` 来管理内部状态。
+
+3. **要将一个无状态组件转变为有状态组件，必须传递 `props` 对象给它吗？**
+   - **答案**：**不正确**。将无状态组件转变为有状态组件的关键是它开始使用 `useState`（或者类组件中的 `this.setState`）来管理自身的状态，而不是是否接收 `props` 对象。
+
+4. **提升状态（Lifting state up）可能导致的结果：**
+   - **答案**：  
+     - **无状态组件变为有状态组件**。提升状态意味着将子组件中的状态移到父组件，通常父组件变为有状态组件，子组件变为无状态组件。
+     - **有状态组件变为无状态组件**。通过将状态提升到父组件，子组件不再需要跟踪状态，变成了无状态组件。
+
+5. **`props` 不一定总是传递状态吗？**
+   - **答案**：**正确**。`props` 不一定总是传递状态，它也可以传递其他类型的数据，例如常规的 JavaScript 值或函数。

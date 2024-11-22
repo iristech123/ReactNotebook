@@ -1,0 +1,76 @@
+### **总结与翻译**
+
+#### **翻译**
+在本视频中，展示了三种在 React 应用中显示图像的方法：
+1. 使用 `import` 语句；
+2. 使用 `require` 函数；
+3. 提供图像的 URL。
+
+为此，作者创建了一个名为 **Embedded Assets** 的基础应用，并在 `src` 文件夹中添加了一个名为 `assets` 的文件夹，其中包含一个 `images` 文件夹和一张名为 `Central Park` 的 JPEG 图像。
+
+---
+
+**1. 使用 `import` 语句**
+- 在代码中使用 `import` 声明，给图像文件设置一个名称（例如 `rooftops`）。
+- 指定图像的相对路径，例如：  
+  ```jsx
+  import rooftops from './assets/images/CentralPark.jpg';
+  ```
+- 在组件中，通过 `<img>` 标签渲染图片，使用 `src` 属性引用 `rooftops`，并设置 `height` 属性（如 `200px`）来调整图像大小。
+- 添加 `alt` 属性，提供对图像的描述。
+- 保存文件后，可以在浏览器中看到导入的图片。
+
+---
+
+**2. 使用 `require` 函数**
+- 不使用 `import`，直接在 `<img>` 标签中使用 `require`，例如：  
+  ```jsx
+  <img src={require('./assets/images/CentralPark.jpg')} height="200" alt="Description" />
+  ```
+- 在 `require` 函数中传入图像的相对路径，路径必须是字符串形式。
+- 同样设置 `height` 和 `alt` 属性。
+- 保存后，图像会正确显示在浏览器中。
+
+---
+
+**3. 使用图像 URL**
+- 提供一个托管在互联网的图像 URL，例如通过随机图片网站。
+- 定义一个变量来存储图像 URL，例如：  
+  ```jsx
+  const randomImageURL = "https://example.com/random-image.jpg";
+  ```
+- 在组件的 `<img>` 标签中，将 `randomImageURL` 作为 `src` 的值来加载图像：  
+  ```jsx
+  <img src={randomImageURL} height="200" alt="Description" />
+  ```
+
+---
+
+#### **总结要点**
+1. **三种图像加载方式：**
+   - `import`：预加载本地图像资源，适合小型静态资源。
+   - `require`：无需预先导入，可以动态加载本地图像。
+   - URL：直接加载在线图像资源。
+
+2. **关键步骤：**
+   - 使用 `src` 引用路径或变量。
+   - 设置适当的 `height` 或其他样式来控制图像显示。
+   - 添加 `alt` 描述，确保可访问性。
+
+3. **最佳实践：**
+   - 对于本地图像，建议使用 `import` 或 `require`。
+   - 对于在线图像，确保 URL 的有效性，避免加载失败。
+
+
+Question
+
+In React, you can import an image as you would any other module.      
+
+
+True
+
+
+False
+
+Correct
+Well done. You can import an image like you would any other module. To use it, just evaluate it as a JSX expression (that is, enclose it inside curly braces).      

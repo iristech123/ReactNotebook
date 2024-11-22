@@ -1,0 +1,26 @@
+以下是关于**条件组件**的关键知识点总结：
+
+1. **条件渲染的基本概念**：
+   - **条件渲染**用于根据某些条件动态地渲染不同的组件或元素。例如，用户登录后，"Log in" 按钮变为 "Log out" 按钮。
+   - 条件渲染基于常见的条件判断（如 `if` 语句），可以根据不同的条件返回不同的组件。
+
+2. **条件渲染的实现**：
+   - 可以通过简单的条件判断（如 `if`、`switch` 语句）来选择不同的组件。例如，使用一个 `isLoggedIn` 的布尔值来决定渲染登录按钮或登出按钮：
+     ```javascript
+     function LogInOutButton(props) {
+       const isLoggedIn = props.isLoggedIn;
+       if (isLoggedIn) {
+         return <LogoutButton />;
+       } else {
+         return <LoginButton />;
+       }
+     }
+     ```
+
+3. **组件间的条件渲染**：
+   - 条件渲染可以通过父组件的 `props` 或组件的 `state` 来控制。例如，在上面的示例中，`LogInOutButton` 组件根据传入的 `isLoggedIn` 属性来决定渲染 `LoginButton` 还是 `LogoutButton`。
+
+4. **实际应用场景**：
+   - 这种基于条件的组件渲染非常常见，尤其是在需要根据用户的登录状态显示不同内容的应用中。
+
+总结：通过条件渲染，React 允许动态控制组件的显示内容，常见的应用场景包括根据用户登录状态切换按钮显示。

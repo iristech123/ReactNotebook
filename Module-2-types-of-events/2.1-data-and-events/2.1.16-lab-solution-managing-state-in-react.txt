@@ -1,0 +1,157 @@
+### **总结要点：React 状态管理解决方案**  
+
+以下是完成后的代码及步骤总结：  
+ 
+#### **完成的 App.js 文件**：  
+```javascript
+import React from "react";
+import Fruits from "./Fruits";
+import FruitsCounter from "./FruitsCounter";
+
+function App() {
+  const [fruits] = React.useState([
+      {fruitName: 'apple', id: 1},
+      {fruitName: 'apple', id: 2},
+      {fruitName: 'plum', id: 3},
+  ]);
+
+  return (
+    <div className="App">
+      <h1>Where should the state go?</h1>
+      <Fruits fruits={fruits} />
+      <FruitsCounter fruits={fruits} />
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+#### **完成的 Fruits.js 文件**：  
+```javascript
+function Fruits(props) {
+    return (
+        <div>
+            {props.fruits.map(f => <p key={f.id}>{f.fruitName}</p>)}
+        </div>
+    )
+}
+
+export default Fruits;
+```
+
+---
+
+#### **完成的 FruitsCounter.js 文件**：  
+```javascript
+function FruitsCounter(props) {
+    return (
+        <h2>Total fruits: {props.fruits.length}</h2>
+    )
+}
+
+export default FruitsCounter;
+```
+
+---
+
+### **步骤说明**  
+
+#### **步骤 1**: 将状态从 Fruits 组件移动到 App 组件  
+1. **删除 Fruits 组件中的状态管理代码**：  
+   原代码：  
+   ```javascript
+   const [fruits] = React.useState([
+       {fruitName: 'apple', id: 1},
+       {fruitName: 'apple', id: 2},
+       {fruitName: 'plum', id: 3},
+   ]);
+   ```  
+   - 移除此状态并删除顶部 `import React from "react";`，因为 `useState` 不再需要。  
+
+2. **将状态迁移到 App 组件**：  
+   在 App 组件中引入 `useState`，并将上述状态定义在 App 中。  
+
+3. **通过 props 将状态传递给 Fruits 和 FruitsCounter 组件**：  
+   更新 App 组件的 `return` 语句：  
+   ```javascript
+   <Fruits fruits={fruits} />
+   <FruitsCounter fruits={fruits} />
+   ```
+
+---
+
+#### **步骤 2**: 更新 Fruits 组件  
+- **让 Fruits 接收 props 并渲染水果数据**：  
+  ```javascript
+  function Fruits(props) {
+      return (
+          <div>
+              {props.fruits.map(f => <p key={f.id}>{f.fruitName}</p>)}
+          </div>
+      )
+  }
+  ```
+
+---
+
+#### **步骤 3**: 更新 FruitsCounter 组件  
+- **接收并使用 props 计算水果总数**：  
+  ```javascript
+  function FruitsCounter(props) {
+      return (
+          <h2>Total fruits: {props.fruits.length}</h2>
+      )
+  }
+  ```
+
+---
+
+### **最终效果**  
+1. **水果数据**显示在 Fruits 组件中。  
+2. **水果总数**动态显示在 FruitsCounter 组件中，并根据状态自动更新（如总数：3）。  
+3. 所有状态管理统一在 App 组件，组件间通过 props 通信，避免重复状态管理。  
+
+
+
+
+补充：
+**Hard-coded**（硬编码）是指在程序代码中直接写入固定值或数据，而不是通过变量、配置文件、用户输入或其他动态方式来获取这些值。  
+
+### **特点**  
+- **固定不变**：一旦写入代码，运行时无法修改，除非重新编辑代码并重新部署。  
+- **缺乏灵活性**：硬编码的值无法适应不同环境或需求的变化。  
+
+---
+
+### **举例**  
+
+#### 1. **硬编码的例子**  
+```javascript
+function FruitsCounter() {
+    return (
+        <h2>Total fruits: 3</h2>
+    );
+}
+```
+- **问题**：总数 3 是固定写入代码的。如果水果数量发生变化，这个值不会自动更新，程序需要手动更改代码。  
+
+---
+
+#### 2. **改进（动态值）**  
+通过使用变量代替硬编码的值，程序会更灵活：  
+```javascript
+function FruitsCounter(props) {
+    return (
+        <h2>Total fruits: {props.fruits.length}</h2>
+    );
+}
+```
+- **优势**：`props.fruits.length` 会根据水果的实际数量动态更新，无需修改代码。  
+
+---
+
+### **总结**  
+硬编码虽然可能在简单场景下快速实现功能，但会导致代码的可维护性、扩展性和复用性下降。推荐使用变量、配置文件、参数等方式来避免硬编码。

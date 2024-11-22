@@ -1,0 +1,32 @@
+### **Prop Drilling 总结翻译**
+
+**Prop Drilling** 是指将数据从父组件通过 `props` 逐层传递给子组件、孙组件，直到到达组件树中需要这些数据的深层组件。
+
+#### **要点总结：**
+1. **基本概念：**  
+   - 父组件通过 `props` 将数据传递给子组件。
+   - 子组件再通过 `props` 将数据传递给它的子组件，依次类推，直到目标组件获取到数据。
+  
+2. **示例代码：**  
+   - 该示例构建了一个简单的 React 应用，展示了数据从父组件到多个子组件的传递过程。
+   - 组件层级：
+     - `App` → `Main` → `Header` → `Wrapper` → `Button`。
+   - 最终，数据通过层层 `props` 传递，供 `Button` 组件使用。点击按钮时，会弹出一个包含传递信息的提示框。
+
+3. **重点过程：**
+   - `Main` 接收 `msg` 属性，并传递给 `Header`。
+   - `Header` 将 `msg` 继续传递给 `Wrapper`。
+   - `Wrapper` 再将 `msg` 传递给 `Button`。
+   - 最终，`Button` 组件通过点击事件显示 `msg` 的值。
+
+4. **界面效果：**
+   - 层级组件被正确渲染。
+   - 点击按钮时，弹出提示框显示信息：  
+     > "I passed through the Header and the Wrapper and I reached the Button component."
+
+5. **问题与优化：**
+   - 随着组件层级的增加，逐层传递 `props` 会变得繁琐和重复。
+   - Prop Drilling 的问题在于：即使某些中间组件不直接使用这些数据，也必须参与传递，导致代码冗余。
+
+#### **结论：**
+Prop Drilling 是一种常见的 `props` 数据传递方式，但当组件层级较多时，它会显得复杂且不高效。React 提供了一些更好的解决方案（如 Context API）来应对这种情况，以减少组件之间不必要的 `props` 传递。

@@ -1,0 +1,115 @@
+### **翻译与总结**
+
+---
+
+#### **翻译**
+
+**解决方案：歌曲选择**
+
+这是完成后的 `App.js` 文件：
+
+```javascript
+import React from "react";
+
+function App() {
+
+  const bird1 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/9/9b/Hydroprogne_caspia_-_Caspian_Tern_XC432679.mp3"
+  );
+
+  const bird2 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/b/b5/Hydroprogne_caspia_-_Caspian_Tern_XC432881.mp3"
+  );
+}
+```
+
+### 完成后的“歌曲选择”练习输出。
+
+**步骤 1：**  
+在这个无评分实验中，你的目标是阅读现有的 `App.js` 文件代码，并更新第二个按钮，使其在点击时运行 `toggle2` 函数。
+
+```javascript
+import React from "react";
+
+function App() {
+  const bird1 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/9/9b/Hydroprogne_caspia_-_Caspian_Tern_XC432679.mp3"
+  );
+
+  // const bird2 = new Audio(
+  //   "https://upload.wikimedia.org/wikipedia/commons/b/b5/Hydroprogne_caspia_-_Caspian_Tern_XC432881.mp3"
+  // );
+}
+```
+
+**步骤 2：**  
+在第二个按钮的 `onClick` 事件处理属性中添加 `toggle2` 函数，并取消注释第 9 到 11 行的 `bird2` 变量。
+
+```javascript
+import React from "react";
+
+function App() {
+  const bird1 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/9/9b/Hydroprogne_caspia_-_Caspian_Tern_XC432679.mp3"
+  );
+
+  const bird2 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/b/b5/Hydroprogne_caspia_-_Caspian_Tern_XC432881.mp3"
+  );
+}
+```
+
+**步骤 3：**  
+接下来，你需要定义 `toggle2` 函数：它应该和 `toggle1` 函数具有相同的功能，但需要与 `bird2` 变量配合工作（而不是 `toggle1` 中的 `bird1` 变量）。
+
+```javascript
+import React from "react";
+
+function App() {
+  const bird1 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/9/9b/Hydroprogne_caspia_-_Caspian_Tern_XC432679.mp3"
+  );
+
+  const bird2 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/b/b5/Hydroprogne_caspia_-_Caspian_Tern_XC432881.mp3"
+  );
+
+  const toggle1 = () => {
+    if (bird1.paused) {
+      bird1.play();
+    } else {
+      bird1.pause();
+    }
+  };
+
+  const toggle2 = () => {
+    if (bird2.paused) {
+      bird2.play();
+    } else {
+      bird2.pause();
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={toggle1}>Caspian Tern 1</button>
+      <button onClick={toggle2}>Caspian Tern 2</button>
+    </div>
+  );
+}
+```
+
+---
+
+#### **总结**
+
+1. **步骤 1：**  
+   更新 `App.js` 中的第二个按钮，确保点击按钮时调用 `toggle2` 函数。
+
+2. **步骤 2：**  
+   取消注释 `bird2` 变量，并将其音频文件链接设置为第二个鸟叫声。
+
+3. **步骤 3：**  
+   定义 `toggle2` 函数，它的功能与 `toggle1` 函数相同，但操作的是 `bird2` 变量，控制第二个鸟叫声的播放与暂停。
+
+这样，你就完成了一个简单的音频控制功能，能够在网页上播放两个不同的鸟叫声。

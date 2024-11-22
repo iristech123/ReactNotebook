@@ -1,0 +1,71 @@
+**总结要点：**
+
+### **React Router 的安装与基本使用**
+
+1. **React Router 简介：**
+   - React 默认无法模拟多页面网站，传统的 `<a>` 标签无法实现无刷新的页面导航。
+   - React Router 是一个库，提供组件路由功能，可以在单页应用（SPA）中实现类似多页面的导航效果。
+
+2. **安装 React Router：**
+   - 使用命令：`npm i react-router-dom@6` 安装。
+   - 安装后可在 `package.json` 的 `dependencies` 中找到相关依赖（如：`react-router-dom 6.3.0`）。
+
+3. **配置 React Router：**
+   - **步骤 1：** 在 `index.js` 文件中，导入 `BrowserRouter` 并将 `<App />` 包裹在 `<BrowserRouter>` 标签内。
+   - **步骤 2：** 在 `App.js` 文件中：
+     - 导入 `Routes` 和 `Route`。
+     - 用 `<Route>` 标签替换页面组件（如 `<Homepage />` 和 `<Aboutme />`）。
+     - 每个 `<Route>` 标签需要指定：
+       - `path` 属性：定义对应 URL 路径。
+       - `element` 属性：对应的组件（如 `<Homepage />` 或 `<Aboutme />`）。
+     - 示例：
+       ```jsx
+       <Routes>
+         <Route path="/" element={<Homepage />} />
+         <Route path="/about-me" element={<Aboutme />} />
+       </Routes>
+       ```
+
+4. **实现导航功能：**
+   - 将传统的 `<a>` 标签替换为 React Router 提供的 `<Link>` 标签：
+     - 示例：
+       ```jsx
+       <Link to="/" className="nav-item">Homepage</Link>
+       <Link to="/about-me" className="nav-item">About Me</Link>
+       ```
+   - 导入 `<Link>`：
+     ```jsx
+     import { Link } from 'react-router-dom';
+     ```
+   - **区别：** `<Link>` 标签通过 React Router 的内部机制加载组件，而非刷新整个页面。
+
+5. **验证效果：**
+   - 输入 `http://localhost:3000/` 会加载 `Homepage` 组件。
+   - 输入 `http://localhost:3000/about-me` 会加载 `Aboutme` 组件。
+   - 点击导航栏的链接，浏览器地址更新，正确内容加载，且无页面刷新。
+
+### **总结：**
+通过本视频，你学会了：
+- 安装 React Router 并在项目中启用它。
+- 使用 `<BrowserRouter>` 包裹根组件。
+- 配置 `<Routes>` 和 `<Route>` 标签定义路由。
+- 使用 `<Link>` 实现无刷新的导航功能。
+
+这些操作为单页应用创建了一个基础导航系统，为用户提供了更流畅的浏览体验。
+
+ True or False? 
+
+You are building an app in React, and have written the following navigation link in your code:  
+
+<a href="/" className="nav-item">Contact Us!</a> 
+
+When the user clicks this link, the app will navigate to the ‘Contact Us!’ page.      
+
+
+True
+
+
+False
+
+Correct
+Well done. That’s right! Instead of navigating to the Contact Us page, a click on the anchor tag will refresh the page.   

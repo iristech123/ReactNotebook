@@ -1,0 +1,128 @@
+1.
+Question 1
+Is the following description true or false? A Single Page Application allows the user to interact with the website without downloading entire new webpages. Instead, it rewrites the current webpage as the user interacts with it. The outcome is that the application will feel faster and more responsive to the user. 
+
+
+True
+
+
+
+False
+
+
+Correct
+Correct. 
+
+Status: [object Object]
+1 / 1 point
+2.
+Question 2
+How do React components turn into the webpage that you see?
+
+
+In simple terms, a React component has a one-to-one relationship to a HTML element that is displayed on the webpage and React keeps track of which HTML elements need to be updated. 
+
+
+
+In simple terms, React downloads a VDOM instance from the server to render all its pages. 
+
+
+
+In simple terms, a React component gets downloaded from the server every time a user interacts with a React app.
+
+
+Correct
+That’s correct! 
+
+Status: [object Object]
+1 / 1 point
+3.
+Question 3
+A SPA can’t have regular anchor tag elements like a traditional web app can. The reason for this is that an anchor tag will load another html file from a server and refresh the page.
+
+
+True
+
+
+
+False
+
+
+Correct
+That’s correct! The above statement is true.
+
+Status: [object Object]
+1 / 1 point
+4.
+Question 4
+A total page refresh is not the way that a SPA works.
+
+
+True
+
+
+
+False
+
+
+Correct
+That’s correct! The above statement is true.
+
+Status: [object Object]
+1 / 1 point
+5.
+Question 5
+Complete the sentence: an SPA comes with its own special implementation of anchor tags and links, which only give an illusion of loading different pages to the end user, when in fact they simply...
+
+
+load different components into a single element of the real DOM into which the virtual DOM tree gets mounted and updated
+
+
+
+load a single component into multiple elements of the real DOM into which the virtual DOM tree gets mounted and updated
+
+
+
+load different components into a single element of the virtual DOM into which the real DOM tree gets mounted and updated
+
+
+Correct
+That’s correct. Different components are loaded into a single element of the real DOM, into which the virtual DOM tree gets mounted and updated.
+
+Status: [object Object]
+1 / 1 point
+
+
+### 翻译与总结：
+
+1. **问题 1：**  
+   **描述：** 单页应用（SPA）允许用户与网站交互而无需下载完整的新网页，而是通过用户的交互重写当前网页。这样，应用程序会感觉更快和更具响应性。  
+   **正确答案：** **True**  
+   **解释：** 单页应用（SPA）通过动态更新页面内容（而不是加载整个新页面）来提高响应速度，使得用户体验更加流畅和快速。
+
+2. **问题 2：**  
+   **问题：** React 组件如何转化为你在网页上看到的内容？  
+   **正确答案：** **In simple terms, a React component has a one-to-one relationship to a HTML element that is displayed on the webpage and React keeps track of which HTML elements need to be updated.**  
+   **解释：** React 组件与网页上的 HTML 元素具有一对一的关系，React 会跟踪哪些 HTML 元素需要更新并在需要时重新渲染它们。
+
+3. **问题 3：**  
+   **问题：** SPA 不能像传统网页那样使用常规的锚点标签。原因是，锚点标签会从服务器加载另一个 HTML 文件并刷新页面。  
+   **正确答案：** **True**  
+   **解释：** 在 SPA 中，点击锚点标签会导致页面刷新，而 SPA 的设计目的是避免刷新整个页面，而是动态更新内容。
+
+4. **问题 4：**  
+   **问题：** 完整页面刷新不是 SPA 的工作方式。  
+   **正确答案：** **True**  
+   **解释：** SPA 不会进行完整的页面刷新，而是通过动态加载和更新部分内容来避免页面重载。
+
+5. **问题 5：**  
+   **完成句子：** SPA 有自己特定实现的锚点标签和链接，这些标签给用户一种加载不同页面的假象，实际上它们只是…  
+   **正确答案：** **load different components into a single element of the real DOM into which the virtual DOM tree gets mounted and updated**  
+   **解释：** SPA 通过将不同的组件加载到一个真实 DOM 元素中来实现页面更新，虚拟 DOM 树会在这个元素中挂载和更新。
+
+---
+
+### 总结：
+- 单页应用（SPA）避免页面刷新，通过动态加载和更新页面内容提升用户体验。
+- React 组件与 HTML 元素有一一对应的关系，React 通过虚拟 DOM 管理更新。
+- SPA 中不使用常规的锚点标签，因为它们会导致页面刷新，SPA 使用自定义的链接来动态加载组件。

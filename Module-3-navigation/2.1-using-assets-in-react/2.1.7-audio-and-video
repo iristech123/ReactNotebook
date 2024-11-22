@@ -1,0 +1,77 @@
+### **翻译与总结**
+
+---
+
+#### **翻译**  
+
+自从智能手机和高速 WiFi 推出后，我们日常在设备上创建、消费和分享视频和音频内容变得轻松。通过本视频，你将学习 React 开发者如何在应用中使用音频和视频资源，并探索如何找到适合处理音视频文件的 React 包。  
+
+**加载本地视频资源的方法：**  
+- 可以使用 HTML5 的 `<video>` 标签，将本地视频加载到 React 应用中。  
+- 像加载图像或其他资源文件一样，您可以在组件的 `return` 语句上方声明一个变量，并将其作为 JSX 表达式传递给 `src` 属性。  
+
+**嵌入第三方视频的特殊情况：**  
+- 对于主要的第三方视频提供商（如社交媒体平台）的视频，这种方法可能并不适用。  
+- 通常，这些平台会提供一段代码片段供嵌入，但你可能需要将其调整为单独的 React 组件，例如通过传递视频的唯一 ID 作为 `prop` 来动态控制输出内容。  
+
+**第三种方法：使用第三方 NPM 包：**  
+- NPM 包生态系统非常庞大，可以通过 [npmjs.org](https://www.npmjs.org) 搜索 "React video" 找到相关包。  
+- **选择合适的包时需注意以下几点：**
+  - 包的更新频率（维护频繁的包通常更可靠）。  
+  - 是否有众多贡献者和活跃的维护（GitHub 上的项目详情如 stars 数量）。  
+  - 查看 GitHub 页面或进行互联网搜索以获取更多信息。  
+
+**示例包：`React Player`**  
+- `React Player` 是一个符合上述标准的包。  
+- 它在 GitHub 上有 **6,000+ 星标**，约 **115 名贡献者**，且维护频繁。  
+
+**总结：**
+- 在 React 应用中添加视频的方法：
+  1. 使用 HTML5 `<video>` 标签加载本地视频。
+  2. 嵌入第三方平台的视频。
+  3. 借助第三方 NPM 包（如 React Player）优化流程。
+- 可通过 npm 和 GitHub 查找、评估并选择适合的包。
+
+---
+
+#### **总结**  
+
+- **三种添加视频到 React 应用的方法：**
+  1. **HTML5 `<video>` 标签**：适合本地视频文件。  
+  2. **嵌入第三方视频**：根据平台提供的代码片段创建可复用的 React 组件。
+  3. **使用第三方 NPM 包**：选择更新频繁、贡献者活跃的包（如 React Player）。
+
+- **如何选择合适的 NPM 包：**
+  - 查看包的维护频率和贡献者数量。  
+  - 检查 GitHub 评分（如 stars）和维护状态。  
+  - 执行互联网搜索，确保包符合项目需求。
+
+通过以上方式，可以轻松处理 React 应用中的音频和视频资源。
+
+
+
+
+Question
+
+When looking for a third-party NPM package to use in the NPM package ecosystem, how would you determine if the package is suitable and the right one you need? Select all that apply.      
+
+
+Find a package with a clever sounding name      
+
+
+Check the package’s GitHub page     
+
+Correct
+Well done.  When looking for an NPM package, check the frequency of the updates, the GitHub page of the package and search for the package name to ensure you find a package suitable to your needs.      
+
+
+Check the frequency of updates     
+
+Correct
+Well done.  When looking for an NPM package, check the frequency of the updates, the GitHub page of the package and search for the package name to ensure you find a package suitable to your needs.      
+
+
+Perform an internet search for the package name     
+
+Correct
+Well done.  When looking for an NPM package, check the frequency of the updates, the GitHub page of the package and search for the package name to ensure you find a package suitable to your needs.      

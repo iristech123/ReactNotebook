@@ -1,0 +1,60 @@
+### **解决方案总结：创建一个新路由**
+
+#### **完成后的效果**
+在导航栏中新增了一个 **Contact** 链接，点击后，页面显示：  
+**"Contact Little Lemon on this page."**
+
+---
+
+### **实现步骤**
+
+#### **1. 创建 `Contact.js` 文件**
+- **位置：** 在 `src` 文件夹的根目录下新建文件 `Contact.js`。
+- **内容：** 定义 `Contact` 组件，并导出：
+  ```javascript
+  function Contact() {
+      return <h1>Contact Little Lemon on this page.</h1>;
+  }
+  export default Contact;
+  ```
+
+---
+
+#### **2. 修改 `App.js` 文件**
+
+1. **导入组件：** 在 `App.js` 中引入 `Contact` 组件：
+   ```javascript
+   import Contact from "./Contact";
+   ```
+2. **更新导航栏：** 在 `nav` 元素中，添加指向 `Contact` 的 `<Link>` 元素：
+   ```javascript
+   <nav>
+       <Link to="/" className="nav-item">Home</Link>
+       <Link to="/about" className="nav-item">About</Link>
+       <Link to="/contact" className="nav-item">Contact</Link>
+   </nav>
+   ```
+3. **添加路由：** 在 `Routes` 元素中，为 `Contact` 添加路由：
+   ```javascript
+   <Routes>
+       <Route path="/" element={<Homepage />} />
+       <Route path="/about" element={<AboutLittleLemon />} />
+       <Route path="/contact" element={<Contact />} />
+   </Routes>
+   ```
+
+---
+
+#### **3. 保存并查看**
+1. **运行项目：** 确保保存所有更改。
+2. **验证功能：**
+   - 导航栏应包含三个链接：**Home**、**About** 和 **Contact**。
+   - 点击 **Contact** 链接后，页面下方应显示文本：  
+     **"Contact Little Lemon on this page."**
+
+---
+
+### **核心要点**
+1. 创建新的组件文件 `Contact.js`，并返回所需的 JSX 内容。
+2. 在 `App.js` 中导入组件，使用 `Link` 元素更新导航栏，并使用 `Route` 添加路由。
+3. 确保 `Link` 的 `to` 属性与 `Route` 的 `path` 属性一致，以正确导航。

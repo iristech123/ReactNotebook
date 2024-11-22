@@ -1,0 +1,313 @@
+1.
+Question 1
+True or false? In React, you can use a ternary operator in a component's return statement in React.
+
+
+True
+
+
+
+False
+
+
+Correct
+Correct. In React, you can use a ternary operator in a component's return statement in React.
+
+Status: [object Object]
+1 / 1 point
+2.
+Question 2
+React Router is...
+
+
+A built-in part of React-DOM.
+
+
+
+A stand-alone package that you can add to a React app.
+
+
+
+A built-in part of React.
+
+
+Correct
+Correct. React Router is a stand-alone package that you can add to a React app.
+
+Status: [object Object]
+1 / 1 point
+3.
+Question 3
+React Router has a <Link> element.
+
+
+True
+
+
+
+False
+
+
+Correct
+That’s correct! React Router has a <Link> element.
+
+Status: [object Object]
+1 / 1 point
+4.
+Question 4
+Please choose the valid command to install react-player.
+
+
+npm install react-player  
+
+
+
+npm-install react-player  
+
+
+
+npm-install-react-player
+
+
+Correct
+Correct. This is the command to use.
+
+Status: [object Object]
+1 / 1 point
+5.
+Question 5
+True or false? webpack is a module bundler.
+
+
+True
+
+
+
+False.
+
+
+Correct
+Correct. Webpack is a module bundler.
+
+Status: [object Object]
+1 / 1 point
+6.
+Question 6
+What will be the output of the code below?
+
+let name; if (Math.random() > 0.5) {   name = "Mike"} else {   name = "Susan"} 
+
+
+It will be 0.5
+
+
+
+It will always be Susan
+
+
+
+It will always be Mike
+
+
+
+It will be sometimes Mike, and sometimes Susan, randomly
+
+
+Correct
+Correct! The reason for this output is the if condition’s code: Math.random() > 0.5, which introduces randomness. 
+
+Status: [object Object]
+1 / 1 point
+7.
+Question 7
+Is the following component syntactically correct?
+
+123456789101112
+import car from "./assets/images/car.jpg";
+
+function CarImage() {
+   return ( 
+      <img 
+        height={200}
+        src={car}
+        alt="Car image" 
+      />
+   );
+
+
+
+Yes
+
+
+
+No
+
+
+Correct
+That’s correct! This code is syntactically correct.        
+
+Status: [object Object]
+1 / 1 point
+8.
+Question 8
+What is an asset?
+
+
+Images, stylesheets, fonts
+
+
+
+Components
+
+
+
+Images, video, and components
+
+
+Correct
+Correct. Images, stylesheets, and fonts are all examples of assets in a React app.
+
+Status: [object Object]
+1 / 1 point
+9.
+Question 9
+What is the syntax used to add a new dev dependency to a React app? Select all that apply. 
+
+
+node init some-package-name
+
+
+
+npm install –save-dev some-package-name
+
+
+Correct
+Correct! Using this command, you’ll add the some-package-name npm package as a dev dependency to your React app.  
+
+
+npm i –save-dev some-package-name
+
+
+Correct
+Correct! Using this command, you’ll add the some-package-name npm package as a dev dependency to your React app.
+
+
+npm init some-package-name
+
+
+Status: [object Object]
+1 / 1 point
+10.
+Question 10
+If your app can compile without it, you can keep an asset in a public folder.
+
+
+True
+
+
+
+False
+
+
+Correct
+Correct. Indeed, if your app can compile without it, you can keep an asset in a public folder.
+
+Status: [object Object]
+1 / 1 point
+
+
+### **总结与翻译：**
+
+---
+
+1. **问题 1**  
+   **在 React 中，你可以在组件的 `return` 语句中使用三元运算符。**  
+   - **正确**
+   - 在 React 中，你可以在组件的 `return` 语句中使用三元运算符。
+
+2. **问题 2**  
+   **React Router 是什么？**  
+   - **React Router 是一个独立的包，你可以将其添加到 React 应用中。**
+
+3. **问题 3**  
+   **React Router 是否有 `<Link>` 元素？**  
+   - **正确**
+   - React Router 确实有一个 `<Link>` 元素。
+
+4. **问题 4**  
+   **安装 react-player 的有效命令是什么？**  
+   - **npm install react-player**
+   - 这是正确的命令。
+
+5. **问题 5**  
+   **webpack 是一个模块打包工具吗？**  
+   - **正确**
+   - Webpack 是一个模块打包工具。
+
+6. **问题 6**  
+   **以下代码的输出是什么？**
+
+   ```javascript
+   let name; 
+   if (Math.random() > 0.5) { 
+      name = "Mike"; 
+   } else { 
+      name = "Susan"; 
+   }
+   ```
+
+   - **它会是 Mike 或 Susan，随机输出。**
+
+7. **问题 7**  
+   **以下组件语法是否正确？**
+
+   ```javascript
+   import car from "./assets/images/car.jpg";
+
+   function CarImage() {
+      return ( 
+         <img 
+           height={200}
+           src={car}
+           alt="Car image" 
+         />
+      );
+   }
+   ```
+
+   - **是的**
+   - 这段代码语法是正确的。
+
+8. **问题 8**  
+   **什么是资产？**  
+   - **图像、样式表、字体**  
+   - 资产是应用程序需要的文件，例如图像、样式表、字体等。
+
+9. **问题 9**  
+   **使用哪些语法可以向 React 应用中添加新的开发依赖项？选择所有适用的。**
+
+   - **npm install --save-dev some-package-name**
+   - **npm i --save-dev some-package-name**
+
+10. **问题 10**  
+    **如果你的应用可以在没有某个资产的情况下编译，你可以将该资产放在 public 文件夹中。**
+    - **正确**
+    - 如果你的应用可以在没有某个资产的情况下编译，那么可以将其存放在 public 文件夹中。
+
+---
+
+通过这些问题，你复习了在 React 中的常见命令、语法以及如何管理资产等知识点。
+
+
+补充：
+**关于第 8 题：**  
+问题是关于 **"资产"** 的定义，选项 C 提到的是 "图像、视频、组件"，但并不是所有的组件都算作资产。在 React 中，资产主要指的是静态文件，如 **图像**、**样式表**、**字体** 等，这些文件通常存放在 `src` 或 `public` 文件夹中，用于构建应用的界面和样式。
+
+因此，正确答案是 **"图像、样式表、字体"**，而 **"图像、视频、组件"** 这个选项包含了组件，组件通常不被认为是“资产”，而是 React 中的功能部分，所以不选 C。
+
+**关于第 9 题：**  
+**npm i --save-dev some-package-name** 和 **npm install --save-dev some-package-name** 是等效的命令。  
+- `npm install` 是 `npm i` 的简写。
+- `--save-dev` 表示将依赖项添加为开发依赖。
+
+因此，`npm i --save-dev some-package-name` 也是有效的命令，和 `npm install --save-dev some-package-name` 是一样的。两者都可以用来向 React 应用中添加开发依赖项。

@@ -1,0 +1,92 @@
+1.
+Question 1
+True or false? When lifting state up, you need to move the useState from a child component to a parent component.
+
+
+False.
+
+
+
+True.
+
+
+Correct
+Correct. When lifting state up, you need to move the useState from a child component to a parent component.
+
+Status: [object Object]
+1 / 1 point
+2.
+Question 2
+If the state variable holds an array or a string value, once you pass that state via props from a parent to a child, you can then read the length property from the received prop in the child component.
+
+
+True
+
+
+
+False
+
+
+Correct
+Correct. If the state variable holds an array or a string value, once you pass that state via props from a parent to a child, you can then read the length property from the received prop in the child component.
+
+Status: [object Object]
+1 / 1 point
+3.
+Question 3
+What's wrong with this code?
+
+123456789101112131415161718192021
+import React from "react";
+import Fruits from "./Fruits";
+import FruitsCounter from "./FruitsCounter";
+
+function App() {
+  const [fruits] = useState([
+      {fruitName: 'apple', id: 1},
+      {fruitName: 'apple', id: 2},
+      {fruitName: 'plum', id: 3},
+  ]);
+
+
+
+The useState call should be React.useState.
+
+
+
+If you don't add the setFruits state-updating function when descructuring values from useState, the app won't compile.
+
+
+
+There's nothing wrong with the provided code.
+
+
+Correct
+Correct. In the context of the give code snippet, you need to access the useState hook using the React.useState syntax.
+
+Status: [object Object]
+1 / 1 point
+
+总结要点：
+
+1. **当进行状态提升时，需要将 `useState` 从子组件移动到父组件。**
+   - **答案**：**正确**。当进行状态提升时，状态从子组件移动到父组件，这样父组件可以控制状态，并通过 props 将状态传递给子组件。
+
+2. **如果状态变量存储的是数组或字符串，一旦通过 props 将该状态从父组件传递给子组件，就可以在子组件中读取传递的 prop 的 `length` 属性。**
+   - **答案**：**正确**。当数组或字符串状态通过 props 传递到子组件时，可以像在父组件中一样访问 `length` 属性。
+
+3. **以下代码有什么问题？**
+   - 代码片段：
+     ```javascript
+     import React from "react";
+     import Fruits from "./Fruits";
+     import FruitsCounter from "./FruitsCounter";
+
+     function App() {
+       const [fruits] = useState([
+           {fruitName: 'apple', id: 1},
+           {fruitName: 'apple', id: 2},
+           {fruitName: 'plum', id: 3},
+       ]);
+     ```
+   - **答案**：**`useState` 调用应该是 `React.useState`。** 在 React 中，当你使用 `useState` 时，如果没有直接导入 `useState`，需要通过 `React.useState` 来访问它。

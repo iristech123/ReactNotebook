@@ -1,0 +1,59 @@
+
+---
+
+### **要点整合**  
+在编程中选择有状态（stateful）或无状态（stateless）组件类似于生活中选择合适的工具，比如选车：小车省油但空间有限，SUV载人多但耗油大。做出最佳选择需要根据需求权衡利弊。  
+
+1. **有状态组件和无状态组件的区别**：  
+   - **有状态组件**：持有内部状态，状态会根据用户操作或应用逻辑发生变化。  
+   - **无状态组件**：不存储状态，数据通过 `props` 继承，且自身不能改变 `props`。  
+
+2. **如何选择组件类型**：  
+   - 当组件无需管理自身状态时，使用无状态组件。  
+   - 当组件需要管理自身状态时，使用有状态组件。  
+
+3. **常见模式**：  
+   - 使用有状态组件作为父组件，将状态通过 `props` 传递给多个无状态子组件。子组件仅负责接收和展示数据，不修改状态。  
+   - 子组件可触发事件（例如点击按钮），间接通知父组件更新状态。  
+
+4. **示例解析**：  
+   - 父组件使用 `useState` 管理状态，并通过 `props` 将状态作为数据传递给子组件。  
+   - 子组件接收状态作为 `props` 显示内容。  
+   - 子组件不能直接修改 `props`，因为 `props` 是不可变的。  
+
+通过这个结构，有状态的父组件可以集中管理状态，而无状态子组件专注于数据的展示或触发事件。  
+
+---
+
+Question
+
+You are creating a page for your app consisting of two components:   
+
+Parent: displays different information based on whether or not user has logged in.  
+
+Child: contains an event handler that sends data to Parent when ‘Log in’ button is clicked.
+
+In this scenario, would it be better to use a stateful or stateless parent component?
+
+a. Stateful
+b. Stateless
+
+Correct -> a. Stateful 
+That's right! The parent component needs to maintain either a 'logged in' or 'logged out' state in order to work as intended, so it should be stateful.       
+### **总结要点**  
+
+**Question**:  
+你正在为应用创建一个页面，该页面包含两个组件：  
+1. **父组件（Parent）**：根据用户是否登录显示不同的信息。  
+2. **子组件（Child）**：包含一个事件处理程序，当点击“登录”按钮时将数据发送给父组件。  
+
+**正确答案**: **Stateful（有状态组件）**  
+
+**原因**:  
+- 父组件需要根据用户是否已登录动态更新其显示内容，因此需要维护和管理自己的状态。  
+- 子组件仅负责触发事件，通知父组件进行状态更新，因此可以是无状态组件。  
+
+--- 
+
+**核心原则**:  
+如果组件需要管理和存储自己的状态，应选择**有状态组件**。

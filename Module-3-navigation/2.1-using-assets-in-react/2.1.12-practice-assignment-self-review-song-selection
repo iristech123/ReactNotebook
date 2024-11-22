@@ -1,0 +1,133 @@
+1.
+Question 1
+In plain JavaScript, how do you build an instance of the Audio constructor?
+
+
+Audio();
+
+
+
+New Audio();
+
+
+
+new Audio();
+
+
+Correct
+Correct. This is the correct way to build an instance of the Audio constructor in vanilla JavaScript.
+
+Status: [object Object]
+1 / 1 point
+2.
+Question 2
+If an object instance of the Audio constructor is saved in a variable named “song”, what property on the “song” object can you use to check if the song is currently playing?
+
+
+song.paused
+
+
+
+song.pause();
+
+
+
+song.play()
+
+
+Correct
+Correct. This is the property that is used to check if the song is currently playing or not.
+
+Status: [object Object]
+1 / 1 point
+3.
+Question 3
+What is wrong with this code?
+
+1234567
+function toggle() {
+    if(song.paused) {
+        song.pause()
+    } else {
+        song.play()
+    }
+}
+
+
+The app's logic doesn't work. The code on line 3 and the code on line 5 should swap places.
+
+
+
+The condition in the if statement is wrong. It should be: 
+
+if(song.paused())
+
+
+
+You need to have an else if condition, in between the if and else conditions.
+
+
+Correct
+Correct. The lines 3 and 5 need to switch places.
+
+Status: [object Object]
+1 / 1 point
+
+
+### **翻译与总结**
+
+---
+
+#### **问题 1**
+在普通的 JavaScript 中，如何构建一个 `Audio` 构造函数的实例？
+
+- **Audio();**
+- **New Audio();**
+- **new Audio();**
+
+**正确答案：** `new Audio();`
+
+**解释：** 在纯 JavaScript 中，创建 `Audio` 构造函数实例的正确方式是 `new Audio();`。
+
+---
+
+#### **问题 2**
+如果将 `Audio` 构造函数的实例对象保存到名为 `song` 的变量中，您可以使用 `song` 对象的哪个属性来检查歌曲是否正在播放？
+
+- **song.paused**
+- **song.pause()**
+- **song.play()**
+
+**正确答案：** `song.paused`
+
+**解释：** `song.paused` 是一个布尔值，表示音频是否暂停。如果返回 `true`，表示音频暂停；如果返回 `false`，表示音频正在播放。
+
+---
+
+#### **问题 3**
+以下代码有什么问题？
+
+```javascript
+function toggle() {
+    if(song.paused) {
+        song.pause()
+    } else {
+        song.play()
+    }
+}
+```
+
+- **应用程序的逻辑不工作。第 3 行和第 5 行的代码应该交换位置。**
+- **if 语句中的条件是错误的。应该是：`if(song.paused())`**
+- **你需要在 if 和 else 条件之间添加一个 else if 条件。**
+
+**正确答案：** **第 3 行和第 5 行的代码应该交换位置。**
+
+**解释：** `song.paused` 是一个布尔值，表示音频是否暂停，不是一个方法。因此，代码应该检查 `song.paused` 而不是调用 `song.paused()`。正确的逻辑是，如果音频暂停，则播放；如果音频正在播放，则暂停。
+
+---
+
+### **总结**
+- **问题 1：** 在 JavaScript 中，使用 `new Audio()` 创建音频对象。
+- **问题 2：** 使用 `song.paused` 来检查音频是否正在播放。
+- **问题 3：** 代码中的错误是逻辑问题，应交换第 3 行和第 5 行的代码。
