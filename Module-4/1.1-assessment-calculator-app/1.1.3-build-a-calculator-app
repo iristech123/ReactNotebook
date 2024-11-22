@@ -1,0 +1,69 @@
+### **任务：构建一个计算器应用**
+
+#### **目标**
+完成一个使用 React 构建的计算器应用，能够执行以下四种基本数学运算：
+- 加法
+- 减法
+- 乘法
+- 除法
+
+你需要结合提供的代码片段以及自编的代码，使应用具备完整功能。
+
+---
+
+### **准备工作**
+1. **初始运行**：
+   - 在更改代码之前，运行 `npm start`。
+   - 如果成功启动，终端会提示 `"webpack compiled successfully"`。
+
+2. **下一步**：
+   - 按照代码中的注释提示操作。这些注释是实现功能的指导步骤。
+   - 添加必要的 `imports` 后，你应该能够启动应用。
+   - 虽然初始版本功能不完善，但至少你可以在浏览器中看到应用的界面。
+
+---
+
+### **任务步骤**
+1. **构建简单计算器应用**：
+   - 界面包括运算选项和数字输入框。
+   - 功能完整，支持四种数学运算。
+
+2. **CSS 样式**：
+   - 由于根目录下缺少 `App.css` 文件，你需要创建该文件，并添加以下代码：
+     ```css
+     * {
+         font-family: sans-serif;
+     }
+     input,
+     button {
+         font-size: 20px;
+         padding: 10px;
+         border-radius: 5px;
+     }
+     input {
+     }
+     ```
+   - 将 `App.css` 导入到 `App.js` 中。
+
+3. **初始代码**：
+   - 提供的起始代码如下：
+     ```javascript
+     import { useState, useRef } from "react";
+     import "./App.css";
+
+     function App() {
+         const inputRef = useRef(null);
+         const resultRef = useRef(null);
+         const [result, setResult] = useState(0);
+
+         // 添加代码使其功能完整
+     }
+     ```
+
+4. **实现目标**：
+   - 使用起始代码，补全功能缺失的部分。
+   - 确保计算器能够正常运算，提供符合预期的用户体验。
+
+---
+
+通过此任务，你将强化 React 编程能力，并熟练掌握组件开发、状态管理和用户界面设计的基本技巧。
